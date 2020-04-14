@@ -1,0 +1,39 @@
+<%# パンくず %>
+  <div class="pankuzu">
+    <div class="p-container">
+      <%= link_to "トップページ", root_path %>
+      <i class="fas fa-chevron-right"></i>
+      <%= link_to "CSS", csses_path %>
+      <i class="fas fa-chevron-right"></i>
+      <p>GAME1</p>
+    </div>
+  </div>
+<%# ここまで %>
+<%# ここから固定 %>
+<div class="body">
+  <%= render 'shared/game' %>
+  <div class="editor">
+    <%= render 'shared/e-number' %>
+    <div class="game-right">
+<%# ここまで %>
+      <%= render 'shared/e-head' %>
+      <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="container"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="left"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="red box"&gt;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="blue box"&gt;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="right"&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="yellow box"&gt;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="green box"&gt;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+        &nbsp;&nbsp;&lt;/body&gt;<br>
+        &lt;/html&gt;
+      </p>
+    </div>
+  </div>
+</div>
+<%# jsタグ %>
+<%= javascript_include_tag 'css-game1.js' %>

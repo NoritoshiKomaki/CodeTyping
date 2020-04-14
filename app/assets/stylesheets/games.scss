@@ -1,0 +1,129 @@
+.container {
+  padding-top: 80px;
+  margin-top: 70px;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+
+#target {
+  position: fixed;
+  left: 0;
+  right: 0;
+  font-family: 'Menlo';
+  font-size: 40px;
+  height: 50px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background: white;
+  width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 7px gray;
+  padding: 10px 20px;
+  overflow: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display:none;
+  }
+}
+
+.info {
+  width: 344px;
+  position: fixed;
+  top: 250px;
+  left: 0;
+  right: 0;
+  color: #1da1f2;
+  border: 3px solid #1da1f2;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.result {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  color: #1da1f2;
+  border: 3px solid #1da1f2;
+  box-shadow: 3px 3px 3px gray;
+  border-radius: 10px;
+  background: white;
+  h1 {
+    font-weight: bold;
+    border-radius: 50px;
+    display: table;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .r-flex {
+    display: flex;
+    justify-content: center;
+    .r-left {
+      text-align: left;
+    }
+    .r-right {
+      text-align: right;
+    }
+    h2 {
+      margin-right: 0;
+      color: #333;
+      font-size: 12px;
+      line-height: 36px;
+      border-bottom: 1px solid lightgray;
+    }
+    .space {
+      color: #1da1f2;
+      font-size: 16px;
+      padding-left: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+.editor {
+  position: fixed;
+  top: 300px;
+  left: 0;
+  right: 0;
+  width: 800px;
+  margin: 40px auto;
+  background: #333;
+  color: white;
+  display: flex;
+  border-radius: 10px;
+  height: 400px;
+  overflow: scroll;
+  border: 20px solid #333;
+  line-height: 27px;
+  box-shadow: 3px 3px 3px gray;
+  &::-webkit-scrollbar {
+    display:none;
+  }
+  p {
+    color: green;
+  }
+  .code {
+    color: yellow;
+    font-weight: bold;
+  }
+}
+
+ul {
+  list-style: none;
+  margin-right: 20px;
+  color: gray;
+}

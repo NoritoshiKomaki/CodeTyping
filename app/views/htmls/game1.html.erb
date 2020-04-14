@@ -1,0 +1,29 @@
+<%# パンくず %>
+  <div class="pankuzu">
+    <div class="p-container">
+      <%= link_to "トップページ", root_path %>
+      <i class="fas fa-chevron-right"></i>
+      <%= link_to "HTML", htmls_path %>
+      <i class="fas fa-chevron-right"></i>
+      <p>GAME1</p>
+    </div>
+  </div>
+<%# ここまで %>
+<%# ここから固定 %>
+<div class="body">
+  <%= render 'shared/game' %>
+  <div class="editor">
+    <%= render 'shared/e-number' %>
+    <div class="game-right">
+      <%= render 'shared/e-head' %>
+<%# ここまで %>
+      <p class="code">&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <p>
+        &nbsp;&nbsp;&lt;/body&gt;<br>
+        &lt;/html&gt;
+      </p>
+    </div>
+  </div>
+</div>
+<%# jsタグ %>
+<%= javascript_include_tag 'html-game1.js' %>

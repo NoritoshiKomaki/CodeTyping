@@ -1,0 +1,26 @@
+header {
+  box-shadow: 3px 3px 3px gray;
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 2;
+}
+
+.h-container {
+  height: 60px;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    color: #333;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  span {
+    color: #1da1f2;
+  }
+}
