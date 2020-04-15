@@ -57,7 +57,6 @@ $(window).on('load', function() {
     $('#r-timer').append(timerLabel);
   }
   
-  cnt = 3;
   $(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
   cnDown = setInterval(function(){ 
       cnt--;

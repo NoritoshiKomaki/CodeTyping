@@ -25,11 +25,10 @@ $(window).on('load', function() {
   ];
 
 // ここから固定
-  const tab4 = tab3 + '&nbsp&nbsp';
-  const target = document.getElementById('target');
-  const scoreLabel = document.getElementById('score');
-  const missLabel = document.getElementById('miss');
-  const timerLabel = document.getElementById('timer');
+const target = document.getElementById('target');
+const scoreLabel = document.getElementById('score');
+const missLabel = document.getElementById('miss');
+const timerLabel = document.getElementById('timer');
 
   function countUp() {
     const d = new Date(Date.now() - startTime + elapsedTime);
@@ -63,7 +62,6 @@ $(window).on('load', function() {
     $('#r-timer').append(timerLabel);
   }
 
-  cnt = 3;
   $(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
   cnDown = setInterval(function(){ 
       cnt--;

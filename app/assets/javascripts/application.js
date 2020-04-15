@@ -24,6 +24,7 @@ let timeoutId;
 let isPlaying = false;
 let num = 0;
 let elapsedTime = 0;
+let cnt = 3;
 
 const tab2 = '&nbsp;&nbsp;&nbsp;&nbsp;';
 const tab3 = tab2 + '&nbsp&nbsp';
