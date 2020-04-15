@@ -72,22 +72,31 @@ $(window).on('load', function() {
     $('#r-timer').append(timerLabel);
   }
   
-  window.addEventListener('click', () => {
-    if (isPlaying === true) {
-      return;
-    }
-    isPlaying = true;
-  
-    loc = 0;
-    score = 0;
-    miss = 0;
-    scoreLabel.textContent = score;
-    missLabel.textContent = miss;
-    word = words[0];
-  
-    target.textContent = word;
-    startTime = Date.now();
-    countUp();
+  cnt = 3;
+  $(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
+  cnDown = setInterval(function(){ 
+      cnt--;
+      if(cnt <= 0){
+          clearInterval(cnDown);
+      }
+      $(target).text(cnt);
+  },1000);
+
+  $(function(){
+    setTimeout(function(){
+      isPlaying = true;
+    
+      loc = 0;
+      score = 0;
+      miss = 0;
+      scoreLabel.textContent = score;
+      missLabel.textContent = miss;
+      word = words[0];
+    
+      $(target).text(word).css('color', '#333').css('font-size', '40px')
+      startTime = Date.now();
+      countUp();  
+    },3000);
   });
 // ここまで
   
