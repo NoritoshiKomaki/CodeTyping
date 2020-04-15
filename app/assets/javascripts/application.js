@@ -30,3 +30,10 @@ const tab3 = tab2 + '&nbsp&nbsp';
 const tab4 = tab3 + '&nbsp&nbsp';
 const tab5 = tab4 + '&nbsp&nbsp';
 const tab6 = tab5 + '&nbsp&nbsp';
+
+$(document).keydown(function (e) {
+  if (e.keyCode == 32) {
+    e.preventDefault();
+    $(target).append(" ")
+  }
+});
