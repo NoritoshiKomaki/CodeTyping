@@ -1,7 +1,23 @@
 <header>
   <div class="h-container">
-    <%= link_to root_path do %>
-      <h2><span>C</span>ode-<span>T</span>yping</div>
+    <div class="h-left">
+      <%= link_to root_path do %>
+        <h2><span>C</span>ode-<span>T</span>yping</h2>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete do%>
+      <p class="h-btn">ログアウト</p>
+    <% end %>
+    <% else %>
+    <ul class="h-right">
+      <%= link_to new_user_session_path do%>
+        <li class="h-btn">ログイン</li>
+      <% end %>
+      <%= link_to new_user_registration_path do%>
+        <li class="h-btn">新規登録</li>
+      <% end %>
+    </ul>
     <% end %>
   </div>
 </header>

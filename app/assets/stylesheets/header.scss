@@ -11,6 +11,7 @@ header {
   width: 1000px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   a {
     text-decoration: none;
@@ -22,5 +23,20 @@ header {
   }
   span {
     color: #1da1f2;
+  }
+  ul {
+    display: flex;
+  }
+  .h-btn {
+    color: #1da1f2;
+    margin-left: 15px;
+    border: 1px solid #1da1f2;
+    border-radius: 4px;
+    padding: 5px 10px;
+    &:hover {
+      transition: 0.3s;
+      color: white;
+      background: #1da1f2;
+    }
   }
 }
