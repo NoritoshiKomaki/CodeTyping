@@ -1,24 +1,22 @@
 <div class="body">
-  <div class="title-logo">
-  <%= link_to root_path do %>
-    <h2><span>C</span>ode-<span>T</span>yping</h2>
-  <% end %>
-  </div>
-  <h2>Log in</h2>
+  <%= render 'shared/logo' %>
 
+  <div class="l-container">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
     <div class="field">
-      <%= f.label :username %><br />
-      <%= f.text_field :username, autofocus: true, autocomplete: "email" %>
+      <%= f.text_field :username, autofocus: true, placeholder: "ユーザー名" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
+      <%= f.password_field :password, placeholder: "パスワード" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "ログイン" %>
     </div>
   <% end %>
+  </div>
 </div>
+<%= render "devise/shared/links" %>

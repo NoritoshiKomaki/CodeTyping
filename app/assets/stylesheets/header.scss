@@ -15,14 +15,7 @@ header {
   align-items: center;
   a {
     text-decoration: none;
-  }
-  h2 {
     color: #333;
-    font-weight: bold;
-    font-size: 30px;
-  }
-  span {
-    color: #1da1f2;
   }
   ul {
     display: flex;
@@ -38,5 +31,19 @@ header {
       color: white;
       background: #1da1f2;
     }
+  }
+}
+
+.title-logo {
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  span {
+    color: #1da1f2;
   }
 }

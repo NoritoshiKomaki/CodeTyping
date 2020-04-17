@@ -1,3 +1,5 @@
+$main-color: #1da1f2;
+
 head, body {
   color: #333;
 }
@@ -33,5 +35,6 @@ head, body {
 
 @import "reset";
 @import "header";
+@import "login";
 @import "top-page";
 @import "games";
