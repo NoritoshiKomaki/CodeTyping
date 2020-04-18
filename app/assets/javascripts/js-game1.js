@@ -20,68 +20,100 @@ $(window).on('load', function() {
   ];
 
 // ここから固定
-  const target = document.getElementById('target');
-  const scoreLabel = document.getElementById('score');
-  const missLabel = document.getElementById('miss');
-  const timerLabel = document.getElementById('timer');
+$('#retry').on('click', function() {
+  location.reload();
+});
+$('#r-submit').on('click', function() {
+  $('#r-string').text('登録が完了しました');
+});
+const target = document.getElementById('target');
+const scoreLabel = document.getElementById('score');
+const missLabel = document.getElementById('miss');
+const timerLabel = document.getElementById('timer');
 
-  function countUp() {
-    const d = new Date(Date.now() - startTime + elapsedTime);
-    const m = String(d.getMinutes()).padStart(2, '0');
-    const s = String(d.getSeconds()).padStart(2, '0');
-    timerLabel.textContent = `${m}:${s}`;
+function countUp() {
+  const d = new Date(Date.now() - startTime + elapsedTime);
+  const m = String(d.getMinutes()).padStart(2, '0');
+  const s = String(d.getSeconds()).padStart(2, '0');
+  timerLabel.textContent = `${m}:${s}`;
 
-    timeoutId = setTimeout(() => {
-      countUp();
-    }, 10);
+  timeoutId = setTimeout(() => {
+    countUp();
+  }, 10);
+}
 
+function startTimer() {
+  testTimer=setInterval(function(){
+  second++;
+  } , 1000);
+}
+
+function countStop() {
+  clearTimeout(timeoutId);
+}
+
+function stopTimer(){
+  clearInterval(testTimer);
+}
+
+function updateTarget() {
+  let placeholder = '';
+  for (let i = 0; i < loc; i++) {
+    placeholder += '_';
   }
+  target.textContent = placeholder + word.substring(loc);
+}
 
-  function countStop() {
-    clearTimeout(timeoutId);
+function showResult() {
+  const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
+  const totalScore =  (score - miss * 3) / (second / 60)
+  if (totalScore > 300) {
+    $('#r-rank').append('S');
+  } else if (totalScore > 250) {
+    $('#r-rank').append('A');
+  } else if (totalScore > 200) {
+    $('#r-rank').append('B');
+  } else if (totalScore > 150) {
+    $('#r-rank').append('C'); 
+  } else if (totalScore > 100) {
+    $('#r-rank').append('D');
+  } else {
+    $('#r-rank').append('E');
   }
-  
-  function updateTarget() {
-    let placeholder = '';
-    for (let i = 0; i < loc; i++) {
-      placeholder += '_';
+  $('#r-totalScore').append(Math.round(totalScore));
+  $('#r-score').append(score);
+  $('#r-miss').append(miss);
+  $('#r-accuracy').append(`${accuracy.toFixed(2)}%`);
+  $('#r-timer').append(timerLabel);
+  $('#myscore').val(totalScore);
+}
+
+$(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
+cnDown = setInterval(function(){ 
+    cnt--;
+    if(cnt <= 0){
+        clearInterval(cnDown);
     }
-    target.textContent = placeholder + word.substring(loc);
-  }
-  
-  function showResult() {
-    const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
-    $('#r-score').append(score);
-    $('#r-miss').append(miss);
-    $('#r-accuracy').append(`${accuracy.toFixed(2)}%`);
-    $('#r-timer').append(timerLabel);
-  }
-  
-  $(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
-  cnDown = setInterval(function(){ 
-      cnt--;
-      if(cnt <= 0){
-          clearInterval(cnDown);
-      }
-      $(target).text(cnt);
-  },1000);
+    $(target).text(cnt);
+},1000);
 
-  $(function(){
-    setTimeout(function(){
-      isPlaying = true;
-    
-      loc = 0;
-      score = 0;
-      miss = 0;
-      scoreLabel.textContent = score;
-      missLabel.textContent = miss;
-      word = words[0];
-    
-      $(target).text(word).css('color', '#333').css('font-size', '40px')
-      startTime = Date.now();
-      countUp();  
-    },3000);
-  });
+$(function(){
+  setTimeout(function(){
+    isPlaying = true;
+  
+    loc = 0;
+    score = 0;
+    miss = 0;
+    scoreLabel.textContent = score;
+    missLabel.textContent = miss;
+    word = words[0];
+  
+    $(target).text(word).css('color', '#333').css('font-size', '40px')
+    startTime = Date.now();
+    countUp();
+    startTimer();
+  },3000);
+});
 // ここまで
   
   window.addEventListener('keydown', e => {
@@ -116,10 +148,11 @@ $(window).on('load', function() {
       }
       updateTarget();
       score++;
-      if (score === 246) {
+      if (score === 3) {
         showResult();
         $('.result').slideDown(200);
         countStop();
+        stopTimer();
         score++;
       }
       scoreLabel.textContent = score;
