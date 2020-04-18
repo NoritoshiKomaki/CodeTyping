@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'games#index'
-  resources :htmls, only: :index do
+  resources :htmls, only: [:index, :create] do
     collection do
       get :game1
     end

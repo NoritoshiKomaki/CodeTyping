@@ -13,6 +13,17 @@
 <%# ここまで %>
 <%# ここから固定 %>
   <%= render 'shared/game' %>
+      <% if user_signed_in? %>
+        <%= form_with(url: htmls_path, local: true) do |f| %>
+          <%= f.hidden_field :score, id: "myscore" %>
+          <%= f.hidden_field :game, value: "html1" %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "登録する", id: "r-submit" %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
   <div class="editor">
     <%= render 'shared/e-number' %>
     <div class="game-right">

@@ -20,11 +20,13 @@ let loc;
 let score;
 let miss;
 let startTime;
+let testTimer;
 let timeoutId;
 let isPlaying = false;
 let num = 0;
 let elapsedTime = 0;
 let cnt = 3;
+let second = 0;
 
 const tab2 = '&nbsp;&nbsp;&nbsp;&nbsp;';
 const tab3 = tab2 + '&nbsp&nbsp';

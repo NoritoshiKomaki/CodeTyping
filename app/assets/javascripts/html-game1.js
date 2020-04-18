@@ -25,6 +25,12 @@ $(window).on('load', function() {
   ];
 
 // ここから固定
+$('#retry').on('click', function() {
+  location.reload();
+});
+$('#r-submit').on('click', function() {
+  $('#r-string').text('登録が完了しました');
+});
 const target = document.getElementById('target');
 const scoreLabel = document.getElementById('score');
 const missLabel = document.getElementById('miss');
@@ -39,11 +45,20 @@ const timerLabel = document.getElementById('timer');
     timeoutId = setTimeout(() => {
       countUp();
     }, 10);
+  }
 
+  function startTimer() {
+    testTimer=setInterval(function(){
+    second++;
+    } , 1000);
   }
 
   function countStop() {
     clearTimeout(timeoutId);
+  }
+
+  function stopTimer(){
+    clearInterval(testTimer);
   }
   
   function updateTarget() {
@@ -56,10 +71,26 @@ const timerLabel = document.getElementById('timer');
   
   function showResult() {
     const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
+    const totalScore =  (score - miss * 3) / (second / 60)
+    if (totalScore > 300) {
+      $('#r-rank').append('S');
+    } else if (totalScore > 250) {
+      $('#r-rank').append('A');
+    } else if (totalScore > 200) {
+      $('#r-rank').append('B');
+    } else if (totalScore > 150) {
+      $('#r-rank').append('C'); 
+    } else if (totalScore > 100) {
+      $('#r-rank').append('D');
+    } else {
+      $('#r-rank').append('E');
+    }
+    $('#r-totalScore').append(Math.round(totalScore));
     $('#r-score').append(score);
     $('#r-miss').append(miss);
     $('#r-accuracy').append(`${accuracy.toFixed(2)}%`);
     $('#r-timer').append(timerLabel);
+    $('#myscore').val(totalScore);
   }
 
   $(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
@@ -84,7 +115,8 @@ const timerLabel = document.getElementById('timer');
     
       $(target).text(word).css('color', '#333').css('font-size', '40px')
       startTime = Date.now();
-      countUp();  
+      countUp();
+      startTimer();
     },3000);
   });
 // ここまで
@@ -115,10 +147,11 @@ const timerLabel = document.getElementById('timer');
       }
       updateTarget();
       score++;
-      if (score === 267) {
+      if (score === 3) {
         showResult();
         $('.result').slideDown(200);
         countStop();
+        stopTimer();
         score++;
       }
       scoreLabel.textContent = score;

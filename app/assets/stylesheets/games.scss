@@ -13,10 +13,10 @@
   letter-spacing: 1px;
   margin: 0 auto;
   margin-bottom: 40px;
-  background: white;
+  // background: white;
   width: 800px;
   border-radius: 10px;
-  box-shadow: 0 0 7px gray;
+  // box-shadow: 0 0 7px gray;
   padding: 10px 20px;
   overflow: scroll;
   overflow-y: hidden;
@@ -39,16 +39,15 @@
 .result {
   display: none;
   position: absolute;
-  top: 40px;
+  top: 31px;
   left: 0;
   right: 0;
   z-index: 2;
   margin: 0 auto;
-  width: 300px;
+  width: 400px;
   padding: 20px;
   color: #1da1f2;
   border: 3px solid #1da1f2;
-  box-shadow: 3px 3px 3px gray;
   border-radius: 10px;
   background: white;
   h1 {
@@ -60,28 +59,45 @@
     margin-bottom: 10px;
     color: #333;
   }
-  .r-flex {
+  .r-container {
     display: flex;
     justify-content: center;
-    .r-left {
-      text-align: left;
+    .r-flex {
+      display: flex;
+      justify-content: center;
+      margin: 0 20px;
+      .r-left {
+        text-align: left;
+      }
+      .r-right {
+        text-align: right;
+      }
+      h2 {
+        margin-right: 0;
+        color: #333;
+        font-size: 12px;
+        line-height: 36px;
+        border-bottom: 1px solid lightgray;
+      }
+      .space {
+        color: #1da1f2;
+        font-size: 16px;
+        padding-left: 20px;
+        font-weight: bold;
+      }
     }
-    .r-right {
-      text-align: right;
-    }
-    h2 {
-      margin-right: 0;
-      color: #333;
-      font-size: 12px;
-      line-height: 36px;
-      border-bottom: 1px solid lightgray;
-    }
-    .space {
-      color: #1da1f2;
-      font-size: 16px;
-      padding-left: 20px;
-      font-weight: bold;
-    }
+  }
+  h3 {
+    font-weight: bold;
+  }
+  .r-btn-flex {
+    display: flex;
+    justify-content: center;
+  }
+  p, input {
+    @include btn;
+    margin: 0 20px;
+    cursor: pointer;
   }
 }
 
