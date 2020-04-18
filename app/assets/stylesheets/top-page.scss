@@ -33,10 +33,42 @@
     margin: 20px;
     margin-bottom: 0;
     border-radius: 10px;
+    position: relative;
     &:hover {
       transform: scale(1.1,1.1);
       transition: 0.2s;
     }
+  }
+  h1 {
+    position: absolute;
+    font-weight: bold;
+    font-size: 30px;
+    background: #333;
+    color: gold;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    z-index: 2;
+  }
+  .s {
+    color: gold
+  }
+  .a {
+    color: magenta;
+  }
+  .b {
+    color: lime;
+  }
+  .c {
+    color: $main-color;
+  }
+  .d {
+    color: darkviolet;
+  }
+  .e {
+    color: silver;
   }
   .soon {
     width: 200px;

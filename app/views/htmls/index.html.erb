@@ -15,6 +15,7 @@
   </div>
   <div class="imgs">
     <div class="img">
+      <%= render partial: 'shared/rank', locals: { lang: @html1 } %>
       <%= link_to game1_htmls_path do %>
         <%= image_tag "html.images/helloworld.png" %>
       <% end %>

@@ -1,0 +1,16 @@
+<% if user_signed_in?%>
+  <% if lang >= 300 %>
+    <h1 class="s">S</h1>
+  <% elsif lang >= 250 %>
+    <h1 class="a">A</h1>
+  <% elsif lang >= 200 %>
+    <h1 class="b">B</h1>
+  <% elsif lang >= 150 %>
+    <h1 class="c">C</h1>
+  <% elsif lang >= 100 %>
+    <h1 class="d">D</h1>
+  <% elsif lang >= 50 %>
+    <h1 class="e">E</h1>
+  <% else %>
+  <% end%>
+<% end %>
