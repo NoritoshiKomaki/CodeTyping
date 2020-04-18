@@ -148,7 +148,7 @@ $(function(){
       }
       updateTarget();
       score++;
-      if (score === 3) {
+      if (score === 246) {
         showResult();
         $('.result').slideDown(200);
         countStop();

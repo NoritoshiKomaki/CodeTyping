@@ -159,7 +159,7 @@ $(function(){
       }
       updateTarget();
       score++;
-      if (score === 3) {
+      if (score === 362) {
         showResult();
         $('.result').slideDown(200);
         countStop();
