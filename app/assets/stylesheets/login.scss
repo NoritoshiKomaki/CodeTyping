@@ -13,6 +13,22 @@
   border-radius: 10px;
   box-shadow: 3px 3px 3px gray;
   padding: 30px 0 60px 0;
+  p {
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    padding-top: 30px;
+  }
+  button {
+    width: 330px;
+    height: 48px;
+    border: 1px solid $main-color;
+    border-radius: 4px;
+    background: $main-color;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    @include hover;
+  }
 }
 
 .field {
@@ -39,6 +55,7 @@
     color: white;
     cursor: pointer;
     margin-top: 30px;
+    @include hover;
   }
 }
 .e-message {

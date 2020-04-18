@@ -17,6 +17,10 @@
       <%= f.submit "ログイン" %>
     </div>
   <% end %>
+    <p>登録されていない方はこちら</p>
+    <%= link_to new_user_registration_path do%>
+      <button>新規登録</button>
+    <% end %>
   </div>
 </div>
 <%= render "devise/shared/links" %>

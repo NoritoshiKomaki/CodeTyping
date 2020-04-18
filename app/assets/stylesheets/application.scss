@@ -1,5 +1,12 @@
 $main-color: #1da1f2;
 
+@mixin hover {
+  &:hover {
+    transform: scale(1.1,1.1);
+    transition: 0.2s;
+  }
+}
+
 @mixin btn {
   border: 1px solid $main-color;
   background-color: $main-color;
