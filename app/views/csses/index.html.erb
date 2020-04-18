@@ -15,6 +15,7 @@
   </div>
   <div class="imgs">
     <div class="img">
+      <%= render partial: 'shared/rank', locals: { lang: @css1 } %>
       <%= link_to game1_csses_path do %>
         <%= image_tag "css.images/css-game1.gif" %>
       <% end %>

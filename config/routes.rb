@@ -6,12 +6,12 @@ Rails.application.routes.draw do
       get :game1
     end
   end
-  resources :csses, only: :index do
+  resources :csses, only: [:index, :create] do
     collection do
       get :game1
     end
   end
-  resources :javascripts, only: :index do
+  resources :javascripts, only: [:index, :create] do
     collection do
       get :game1
     end

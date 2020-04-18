@@ -25,16 +25,16 @@ $(window).on('load', function() {
   ];
 
 // ここから固定
-$('#retry').on('click', function() {
-  location.reload();
-});
-$('#r-submit').on('click', function() {
-  $('#r-string').text('登録が完了しました');
-});
-const target = document.getElementById('target');
-const scoreLabel = document.getElementById('score');
-const missLabel = document.getElementById('miss');
-const timerLabel = document.getElementById('timer');
+  $('#retry').on('click', function() {
+    location.reload();
+  });
+  $('#r-submit').on('click', function() {
+    $('#r-string').text('登録が完了しました');
+  });
+  const target = document.getElementById('target');
+  const scoreLabel = document.getElementById('score');
+  const missLabel = document.getElementById('miss');
+  const timerLabel = document.getElementById('timer');
 
   function countUp() {
     const d = new Date(Date.now() - startTime + elapsedTime);
@@ -147,7 +147,7 @@ const timerLabel = document.getElementById('timer');
       }
       updateTarget();
       score++;
-      if (score === 3) {
+      if (score === 267) {
         showResult();
         $('.result').slideDown(200);
         countStop();

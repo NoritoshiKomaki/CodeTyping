@@ -1,0 +1,2 @@
+class Javascript < ApplicationRecord
+end
