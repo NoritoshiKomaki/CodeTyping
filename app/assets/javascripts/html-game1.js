@@ -100,7 +100,7 @@ $(window).on('load', function() {
           clearInterval(cnDown);
       }
       $(target).text(cnt);
-  },1000);
+  },999);
 
   $(function(){
     setTimeout(function(){
