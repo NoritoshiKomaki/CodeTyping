@@ -1,0 +1,9 @@
+<div style="margin: 300px;">
+<h1>ログイン中: <%= current_user.username %></h1>
+<h1>あなたの順位は<span><%= @user_id.length %></span>人中<span><%= @user_id.index(current_user.id) + 1 %></span>位です</h1>
+
+<% @htmls.each_with_index do |html, i| %>
+<h2><%= i + 1%><span><%= User.find_by(id: html[0]).username %></span><span><%= html[1] %></span>
+
+<% end %>
+</div>

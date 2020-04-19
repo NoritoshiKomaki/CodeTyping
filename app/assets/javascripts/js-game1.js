@@ -1,4 +1,4 @@
-$(window).on('load', function() {
+$(function() {
   $('#length').append('/246');
   const words = [
     '<script>',
@@ -20,122 +20,125 @@ $(window).on('load', function() {
   ];
 
 // ここから固定
-$('#retry').on('click', function() {
-  location.reload();
-});
-$('#r-submit').on('click', function() {
-  $('#r-string').text('登録が完了しました');
-});
-const target = document.getElementById('target');
-const scoreLabel = document.getElementById('score');
-const missLabel = document.getElementById('miss');
-const timerLabel = document.getElementById('timer');
+  $('#retry').on('click', function() {
+    location.reload();
+  });
+  $('#r-submit').on('click', function() {
+    $('#r-string').text('登録が完了しました');
+  });
 
-function countUp() {
-  const d = new Date(Date.now() - startTime + elapsedTime);
-  const m = String(d.getMinutes()).padStart(2, '0');
-  const s = String(d.getSeconds()).padStart(2, '0');
-  timerLabel.textContent = `${m}:${s}`;
+  const rank = $('#r-rank')
+  const code = $('#code')
+  const target = $('#target');
+  const scoreLabel = $('#score');
+  const missLabel = $('#miss');
+  const timerLabel = $('#timer');
 
-  timeoutId = setTimeout(() => {
-    countUp();
-  }, 10);
-}
+  function countUp() {
+    const d = new Date(Date.now() - startTime + elapsedTime);
+    const m = String(d.getMinutes()).padStart(2, '0');
+    const s = String(d.getSeconds()).padStart(2, '0');
+    timerLabel.text(`${m}:${s}`);
 
-function startTimer() {
-  testTimer=setInterval(function(){
-  second++;
-  } , 1000);
-}
-
-function countStop() {
-  clearTimeout(timeoutId);
-}
-
-function stopTimer(){
-  clearInterval(testTimer);
-}
-
-function updateTarget() {
-  let placeholder = '';
-  for (let i = 0; i < loc; i++) {
-    placeholder += '_';
+    timeoutId = setTimeout(() => {
+      countUp();
+    }, 10);
   }
-  target.textContent = placeholder + word.substring(loc);
-}
 
-function showResult() {
-  const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
-  const totalScore =  (score - miss * 3) / (second / 60)
-  if (totalScore >= 300) {
-    $('#r-rank').append('S');
-  } else if (totalScore >= 285) {
-    $('#r-rank').append('A+');
-  } else if (totalScore >= 265) {
-    $('#r-rank').append('A');
-  } else if (totalScore >= 250) {
-    $('#r-rank').append('A-');
-  } else if (totalScore >= 235) {
-    $('#r-rank').append('B+');
-  } else if (totalScore >= 215) {
-    $('#r-rank').append('B');
-  } else if (totalScore >= 200) {
-    $('#r-rank').append('B-');
-  } else if (totalScore >= 185) {
-    $('#r-rank').append('C+'); 
-  } else if (totalScore >= 165) {
-    $('#r-rank').append('C'); 
-  } else if (totalScore >= 150) {
-    $('#r-rank').append('C-'); 
-  } else if (totalScore >= 135) {
-    $('#r-rank').append('D+');
-  } else if (totalScore >= 115) {
-    $('#r-rank').append('D');
-  } else if (totalScore >= 100) {
-    $('#r-rank').append('D-');
-  } else if (totalScore >= 85) {
-    $('#r-rank').append('E+');
-  } else if (totalScore >= 65) {
-    $('#r-rank').append('E');
-  } else if (totalScore >= 50) {
-    $('#r-rank').append('E-');
-  } else {
-    $('#r-rank').append('-');
+  function startTimer() {
+    testTimer=setInterval(function(){
+    second++;
+    } , 1000);
   }
-  $('#r-totalScore').append(Math.round(totalScore));
-  $('#r-score').append(score);
-  $('#r-miss').append(miss);
-  $('#r-accuracy').append(`${accuracy.toFixed(2)}%`);
-  $('#r-timer').append(timerLabel);
-  $('#myscore').val(totalScore);
-}
 
-$(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
-cnDown = setInterval(function(){ 
-    cnt--;
-    if(cnt <= 0){
-        clearInterval(cnDown);
+  function countStop() {
+    clearTimeout(timeoutId);
+  }
+
+  function stopTimer(){
+    clearInterval(testTimer);
+  }
+
+  function updateTarget() {
+    let placeholder = '';
+    for (let i = 0; i < loc; i++) {
+      placeholder += '_';
     }
-    $(target).text(cnt);
-},999);
+    target.text(placeholder + word.substring(loc));
+  }
 
-$(function(){
-  setTimeout(function(){
-    isPlaying = true;
-  
-    loc = 0;
-    score = 0;
-    miss = 0;
-    scoreLabel.textContent = score;
-    missLabel.textContent = miss;
-    word = words[0];
-  
-    $(target).text(word).css('color', '#333').css('font-size', '40px')
-    startTime = Date.now();
-    countUp();
-    startTimer();
-  },3000);
-});
+  function showResult() {
+    const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
+    const totalScore =  (score - miss * 3) / (second / 60)
+    if (totalScore >= 300) {
+      rank.append('S');
+    } else if (totalScore >= 285) {
+      rank.append('A+');
+    } else if (totalScore >= 265) {
+      rank.append('A');
+    } else if (totalScore >= 250) {
+      rank.append('A-');
+    } else if (totalScore >= 235) {
+      rank.append('B+');
+    } else if (totalScore >= 215) {
+      rank.append('B');
+    } else if (totalScore >= 200) {
+      rank.append('B-');
+    } else if (totalScore >= 185) {
+      rank.append('C+'); 
+    } else if (totalScore >= 165) {
+      rank.append('C'); 
+    } else if (totalScore >= 150) {
+      rank.append('C-'); 
+    } else if (totalScore >= 135) {
+      rank.append('D+');
+    } else if (totalScore >= 115) {
+      rank.append('D');
+    } else if (totalScore >= 100) {
+      rank.append('D-');
+    } else if (totalScore >= 85) {
+      rank.append('E+');
+    } else if (totalScore >= 65) {
+      rank.append('E');
+    } else if (totalScore >= 50) {
+      rank.append('E-');
+    } else {
+      rank.append('-');
+    }
+    $('#r-totalScore').append(Math.round(totalScore));
+    $('#r-score').append(score);
+    $('#r-miss').append(miss);
+    $('#r-accuracy').append(`${accuracy.toFixed(2)}%`);
+    $('#r-timer').append(timerLabel);
+    $('#myscore').val(totalScore);
+  }
+
+  target.text(cnt).css('color', '#1da1f2').css('font-size', '64px')
+  cnDown = setInterval(function(){ 
+      cnt--;
+      if(cnt <= 0){
+          clearInterval(cnDown);
+      }
+      target.text(cnt);
+  },999);
+
+  $(function(){
+    setTimeout(function(){
+      isPlaying = true;
+    
+      loc = 0;
+      score = 0;
+      miss = 0;
+      scoreLabel.text(score);
+      missLabel.text(miss);
+      word = words[0];
+    
+      target.text(word).css('color', '#333').css('font-size', '48px')
+      startTime = Date.now();
+      countUp();
+      startTimer();
+    },3000);
+  });
 // ここまで
   
   window.addEventListener('keydown', e => {
@@ -144,28 +147,28 @@ $(function(){
     }
   
     if (e.key === word[loc]) {
-      $('.code').append(word[loc]);
+      code.append(word[loc]);
       loc++;
       if (loc === 15) {
-        $(target).animate({ scrollLeft: 500})
+        target.animate({ scrollLeft: 500})
       };
       if (loc === word.length) {
-        $('.code').append('<br>');
+        code.append('<br>');
         word = words[num = num + 1];
         loc = 0;
         $('.editor').animate({ scrollTop: 27 * num});
         if (num === 0) {
           return;
         } else if (num === 15) {
-          $('.code').append(tab2);
+          code.append(tab2);
         } else if (num === 1 || num === 13 || num === 14) {
-          $('.code').append(tab3);
+          code.append(tab3);
         } else if (num === 2 || num === 12) {
-          $('.code').append(tab4);
+          code.append(tab4);
         } else if (num === 3 || num === 5 || num === 7 || num === 9 || num === 11) {
-          $('.code').append(tab5);
+          code.append(tab5);
         } else {
-          $('.code').append(tab6);
+          code.append(tab6);
         }
       }
       updateTarget();
@@ -177,12 +180,12 @@ $(function(){
         stopTimer();
         score++;
       }
-      scoreLabel.textContent = score;
+      scoreLabel.text(score);
     } else if(e.keyCode === 16) {
       e.preventDefault();
     } else {
       miss++;
-      missLabel.textContent = miss;
+      missLabel.text(miss);
     }
   });
 });
