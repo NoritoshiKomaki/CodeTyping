@@ -1,5 +1,6 @@
 .body {
   font-family: -apple-system, BlinkMacSystemFont, Verdana, Roboto, arial, 'HiraKakuProN-W3', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDGothic', Meiryo, sans-serif;
+  color: #333;
   background: #eee;
   height: 100vh;
   overflow: scroll;
@@ -47,11 +48,25 @@
     background: #333;
     color: gold;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     z-index: 2;
+  }
+  span {
+    font-size: 20px;
+    line-height: 1;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+  .plus {
+    color: gold;
+  }
+  .minus {
+    color: silver;
+    font-size: 24px;
   }
   .s {
     color: gold

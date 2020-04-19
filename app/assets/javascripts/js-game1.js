@@ -67,18 +67,40 @@ function updateTarget() {
 function showResult() {
   const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
   const totalScore =  (score - miss * 3) / (second / 60)
-  if (totalScore > 300) {
+  if (totalScore >= 300) {
     $('#r-rank').append('S');
-  } else if (totalScore > 250) {
+  } else if (totalScore >= 285) {
+    $('#r-rank').append('A+');
+  } else if (totalScore >= 265) {
     $('#r-rank').append('A');
-  } else if (totalScore > 200) {
+  } else if (totalScore >= 250) {
+    $('#r-rank').append('A-');
+  } else if (totalScore >= 235) {
+    $('#r-rank').append('B+');
+  } else if (totalScore >= 215) {
     $('#r-rank').append('B');
-  } else if (totalScore > 150) {
+  } else if (totalScore >= 200) {
+    $('#r-rank').append('B-');
+  } else if (totalScore >= 185) {
+    $('#r-rank').append('C+'); 
+  } else if (totalScore >= 165) {
     $('#r-rank').append('C'); 
-  } else if (totalScore > 100) {
+  } else if (totalScore >= 150) {
+    $('#r-rank').append('C-'); 
+  } else if (totalScore >= 135) {
+    $('#r-rank').append('D+');
+  } else if (totalScore >= 115) {
     $('#r-rank').append('D');
-  } else {
+  } else if (totalScore >= 100) {
+    $('#r-rank').append('D-');
+  } else if (totalScore >= 85) {
+    $('#r-rank').append('E+');
+  } else if (totalScore >= 65) {
     $('#r-rank').append('E');
+  } else if (totalScore >= 50) {
+    $('#r-rank').append('E-');
+  } else {
+    $('#r-rank').append('-');
   }
   $('#r-totalScore').append(Math.round(totalScore));
   $('#r-score').append(score);

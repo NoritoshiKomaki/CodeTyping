@@ -1,16 +1,36 @@
 <% if user_signed_in? && lang %>
   <% if lang >= 300 %>
     <h1 class="s">S</h1>
-  <% elsif lang >= 250 %>
+  <% elsif lang >= 285 %>
+    <h1 class="a">A<span class="plus">+</span></h1>
+  <% elsif lang >= 265 %>
     <h1 class="a">A</h1>
-  <% elsif lang >= 200 %>
+  <% elsif lang >= 250 %>
+    <h1 class="a">A<span class="minus">-</span></h1>
+  <% elsif lang >= 235 %>
+    <h1 class="b">B<span class="plus">+</span></h1>
+  <% elsif lang >= 215 %>
     <h1 class="b">B</h1>
-  <% elsif lang >= 150 %>
+  <% elsif lang >= 200 %>
+    <h1 class="b">B<span class="minus">-</span></h1>
+  <% elsif lang >= 185 %>
+    <h1 class="c">C<span class="plus">+</span></h1>
+  <% elsif lang >= 165 %>
     <h1 class="c">C</h1>
-  <% elsif lang >= 100 %>
+  <% elsif lang >= 150 %>
+    <h1 class="c">C<span class="minus">-</span></h1>
+  <% elsif lang >= 135 %>
+    <h1 class="d">D<span class="plus">+</span></h1>
+  <% elsif lang >= 115 %>
     <h1 class="d">D</h1>
-  <% elsif lang >= 50 %>
+  <% elsif lang >= 100 %>
+    <h1 class="d">D<span class="minus">-</span></h1>
+  <% elsif lang >= 85 %>
+    <h1 class="e">E<span class="plus">+</span></h1>
+  <% elsif lang >= 65 %>
     <h1 class="e">E</h1>
+  <% elsif lang >= 50 %>
+    <h1 class="e">E<span class="minus">-</span></h1>
   <% else %>
   <% end%>
 <% end %>
