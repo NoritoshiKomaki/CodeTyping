@@ -93,7 +93,7 @@ $(window).on('load', function() {
     $('#myscore').val(totalScore);
   }
 
-  $(target).text(cnt).css('color', '#1da1f2').css('font-size', '56px')
+  $(target).text(cnt).css('color', '#1da1f2').css('font-size', '64px')
   cnDown = setInterval(function(){ 
       cnt--;
       if(cnt <= 0){
@@ -113,7 +113,7 @@ $(window).on('load', function() {
       missLabel.textContent = miss;
       word = words[0];
     
-      $(target).text(word).css('color', '#333').css('font-size', '40px')
+      $(target).text(word).css('color', '#333').css('font-size', '48px')
       startTime = Date.now();
       countUp();
       startTimer();

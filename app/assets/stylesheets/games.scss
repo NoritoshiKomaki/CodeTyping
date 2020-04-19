@@ -7,10 +7,10 @@
 }
 
 #target {
-  font-family: 'Menlo';
+  font-family: "RictyDiminished-Regular";
   height: 50px;
   line-height: 50px;
-  letter-spacing: 1px;
+  // letter-spacing: 3px;
   margin: 0 auto;
   margin-bottom: 40px;
   // background: white;
@@ -27,6 +27,7 @@
 }
 
 .info {
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
   display: table;
   color: #1da1f2;
   border: 3px solid #1da1f2;
@@ -103,6 +104,8 @@
 
 
 .editor {
+  font-family: "RictyDiminished-Regular";
+  font-size: 20px;
   width: 800px;
   margin: 40px auto;
   background: #333;
