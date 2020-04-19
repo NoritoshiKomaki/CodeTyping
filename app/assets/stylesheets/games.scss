@@ -7,16 +7,13 @@
 }
 
 #target {
-  font-family: "RictyDiminished-Regular", Consolas, 'Courier New', Courier, Monaco, monospace;;
+  font-family: "RictyDiminished-Regular";
   height: 50px;
   line-height: 50px;
-  // letter-spacing: 3px;
   margin: 0 auto;
   margin-bottom: 40px;
-  // background: white;
   width: 800px;
   border-radius: 10px;
-  // box-shadow: 0 0 7px gray;
   padding: 10px 20px;
   overflow: scroll;
   overflow-y: hidden;
@@ -125,7 +122,6 @@
   }
   .code {
     color: yellow;
-    font-weight: bold;
   }
 }
 
