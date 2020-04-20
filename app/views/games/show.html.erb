@@ -23,16 +23,18 @@
         <li class="g-space right">スコア</li>
       </ul>
 
-    <% @htmls.each_with_index do |html, i| %>
+    <% num = (@pages.current_page - 1) * 10 %>
+    <% @pages.each_with_index do |page, index| %>
       <ul class="g-flex g-hover">
-        <li class="g-bar left"><%= i + 1%>位</li>
-        <% if current_user.username == User.find_by(id: html[0]).username %>
-        <li class="g-bar strong center"><%= User.find_by(id: html[0]).username %></li>
+        <li class="g-bar left"><%= num + 1 + index %>位</li>
+        <% if current_user.username == User.find_by(id: page[0]).username %>
+        <li class="g-bar strong center"><%= User.find_by(id: page[0]).username %></li>
         <% else %>
-        <li class="g-bar center"><%= User.find_by(id: html[0]).username %></li>
+        <li class="g-bar center"><%= User.find_by(id: page[0]).username %></li>
         <% end %>
-        <li class="g-bar right"><%= html[1] %></li>
+        <li class="g-bar right"><%= page[1] %></li>
       </ul>
     <% end %>
+    <%= paginate(@pages) %>
   </div>
 </div>
