@@ -23,7 +23,7 @@
         <li class="g-space right">スコア</li>
       </ul>
 
-    <% num = (@pages.current_page - 1) * 10 %>
+    <% num = (@pages.current_page - 1) * @pages.limit_value %>
     <% @pages.each_with_index do |page, index| %>
       <ul class="g-flex g-hover">
         <li class="g-bar left"><%= num + 1 + index %>位</li>
