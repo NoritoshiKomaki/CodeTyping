@@ -1,9 +1,38 @@
-<div style="margin: 300px;">
-<h1>ログイン中: <%= current_user.username %></h1>
-<h1>あなたの順位は<span><%= @user_id.length %></span>人中<span><%= @user_id.index(current_user.id) + 1 %></span>位です</h1>
+<div class="body">
+<%= render 'shared/header' %>
+<%# パンくず %>
+  <div class="pankuzu">
+    <div class="p-container">
+      <%= link_to "トップページ", root_path %>
+      <i class="fas fa-chevron-right"></i>
+      <p>ランキング</p>
+    </div>
+  </div>
+<%# ここまで %>
+  <div class="g-container">
+    <div class="title g-title">
+      <%= image_tag "top.images/html.png" %>
+      <h1>HTMLランキング</h1>
+    </div>
+    <h2><%= current_user.username %>さんの順位<br><span><%= @user_id.index(current_user.id) + 1 %></span> / <%= @user_id.length %> 位</h2>
 
-<% @htmls.each_with_index do |html, i| %>
-<h2><%= i + 1%><span><%= User.find_by(id: html[0]).username %></span><span><%= html[1] %></span>
+    
+      <ul class="g-flex">
+        <li class="g-space left">順位</li>
+        <li class="g-space center">ユーザー名</li>
+        <li class="g-space right">スコア</li>
+      </ul>
 
-<% end %>
+    <% @htmls.each_with_index do |html, i| %>
+      <ul class="g-flex g-hover">
+        <li class="g-bar left"><%= i + 1%>位</li>
+        <% if current_user.username == User.find_by(id: html[0]).username %>
+        <li class="g-bar strong center"><%= User.find_by(id: html[0]).username %></li>
+        <% else %>
+        <li class="g-bar center"><%= User.find_by(id: html[0]).username %></li>
+        <% end %>
+        <li class="g-bar right"><%= html[1] %></li>
+      </ul>
+    <% end %>
+  </div>
 </div>
