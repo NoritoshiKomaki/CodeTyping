@@ -1,0 +1,22 @@
+<div class="body">
+<%= render 'shared/header' %>
+<%# パンくず %>
+  <div class="pankuzu">
+    <div class="p-container">
+      <%= link_to "トップページ", root_path %>
+      <i class="fas fa-chevron-right"></i>
+      <%= link_to "CSS", csses_path %>
+      <i class="fas fa-chevron-right"></i>
+      <p>ランキング</p>
+    </div>
+  </div>
+<%# ここまで %>
+  <div class="shadow2"></div>
+  <div class="g-container">
+    <div class="title g-title">
+      <%= image_tag "top.images/css.png" %>
+      <h1>CSS</h1>
+    </div>
+    <%= render 'shared/ranking' %>
+  </div>
+</div>

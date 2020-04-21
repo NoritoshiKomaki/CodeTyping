@@ -1,0 +1,27 @@
+<% if user_signed_in? && current_user.id == @id %>
+  <h2><%= current_user.username %>さんの順位<br><span class="g-big"><%= @user_id.index(current_user.id) + 1 %></span> / <%= @user_id.length %> 位</h2>
+<% elsif user_signed_in?%>
+  <h2><%= current_user.username %>さんの順位<br>- / <%= @user_id.length %> 位</h2>
+<% else %>
+  <h2>- さんの順位<br>- / <%= @user_id.length %> 位</h2>
+<% end %>
+<ul class="g-flex">
+  <li class="g-space left">順位</li>
+  <li class="g-space center">ユーザー名</li>
+  <li class="g-space right">スコア</li>
+</ul>
+<% num = (@pages.current_page - 1) * @pages.limit_value %>
+<% @pages.each_with_index do |page, index| %>
+  <ul class="g-flex g-hover">
+    <% if user_signed_in? && current_user.username == User.find_by(id: page[0]).username %>
+      <li class="g-bar strong left"><%= num + 1 + index %>位</li>
+      <li class="g-bar strong center"><%= User.find_by(id: page[0]).username %></li>
+      <li class="g-bar strong right"><%= page[1] %></li>
+    <% else %>
+      <li class="g-bar left"><%= num + 1 + index %>位</li>
+      <li class="g-bar center"><%= User.find_by(id: page[0]).username %></li>
+      <li class="g-bar right"><%= page[1] %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= paginate(@pages) %>

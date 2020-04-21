@@ -12,6 +12,7 @@
   </div>
 <%# ここまで %>
 <%# ここから固定 %>
+  <div class="shadow2"></div>
   <%= render 'shared/game' %>
       <% if user_signed_in? %>
         <%= form_with(url: javascripts_path, local: true) do |f| %>

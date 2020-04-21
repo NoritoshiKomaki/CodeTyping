@@ -23,3 +23,13 @@ $(document).keydown(function (e) {
     $(target).append(" ")
   }
 });
+
+$(function() {
+  $('.ranking').hover(
+    function() {
+      $(this).children('.dropdown').addClass('open');
+    }, function() {
+      $(this).children('.dropdown').removeClass('open');
+    }
+  );
+})

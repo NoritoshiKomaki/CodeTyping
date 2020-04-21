@@ -7,6 +7,29 @@
         </div>
       <% end %>
     </div>
+    <div class="h-center">
+      <h4 class="ranking">
+        ランキング
+        <ul class="dropdown">
+          <%= link_to html_path do%>
+            <li class="li-big">HTML</li>
+          <% end%>
+          <%= link_to css_path do%>
+            <li class="li-big">CSS</li>
+          <% end%>
+          <%= link_to javascript_path do%>
+            <li class="li-big">JavaScript</li>
+          <% end%>
+          <li>jQuery</li>
+        </ul>
+        <ul class="dropdown">
+          <li>Ruby</li>
+          <li>php</li>
+          <li>python</li>
+          <li>Java</li>
+        </ul>
+      </h4>
+    </div>
     <% if user_signed_in? %>
     <%= link_to destroy_user_session_path, method: :delete do%>
       <p class="h-btn">ログアウト</p>

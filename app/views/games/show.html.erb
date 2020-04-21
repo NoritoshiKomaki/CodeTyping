@@ -9,12 +9,13 @@
     </div>
   </div>
 <%# ここまで %>
+  <div class="shadow2"></div>
   <div class="g-container">
     <div class="title g-title">
       <%= image_tag "top.images/html.png" %>
       <h1>HTMLランキング</h1>
     </div>
-    <h2><%= current_user.username %>さんの順位<br><span><%= @user_id.index(current_user.id) + 1 %></span> / <%= @user_id.length %> 位</h2>
+    <h2><%= current_user.username %>さんの順位<br><span class="g-big"><%= @user_id.index(current_user.id) + 1 %></span> / <%= @user_id.length %> 位</h2>
 
     
       <ul class="g-flex">
@@ -26,13 +27,15 @@
     <% num = (@pages.current_page - 1) * @pages.limit_value %>
     <% @pages.each_with_index do |page, index| %>
       <ul class="g-flex g-hover">
-        <li class="g-bar left"><%= num + 1 + index %>位</li>
         <% if current_user.username == User.find_by(id: page[0]).username %>
+        <li class="g-bar strong left"><%= num + 1 + index %>位</li>
         <li class="g-bar strong center"><%= User.find_by(id: page[0]).username %></li>
+        <li class="g-bar strong right"><%= page[1] %></li>
         <% else %>
+        <li class="g-bar left"><%= num + 1 + index %>位</li>
         <li class="g-bar center"><%= User.find_by(id: page[0]).username %></li>
-        <% end %>
         <li class="g-bar right"><%= page[1] %></li>
+        <% end %>
       </ul>
     <% end %>
     <%= paginate(@pages) %>

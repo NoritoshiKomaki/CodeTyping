@@ -2,16 +2,13 @@
   width: 800px;
   background: white;
   margin: 140px auto;
-  padding: 15px 0 25px 0;
+  padding: 20px 0 15px 0;
   border-radius: 10px;
   box-shadow: 3px 3px 3px gray;
   .g-title {
-    width: 330px;
-    border-bottom: 3px solid $main-color;
     padding: 0;
-    margin: 0 auto;
   }
-  span {
+  .g-big {
     color: $main-color;
     font-size: 32px;
   }
@@ -57,4 +54,41 @@
 .g-hover:hover {
   @include hover;
   font-weight: bold;
+}
+
+.pagination {
+  display: table;
+  margin: 0 auto;
+  margin-top: 10px;
+  a {
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    color: $main-color;
+    border: 1px solid $main-color;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    &:hover {
+      transform: scale(1.2,1.2);
+      transition: 0.2s;
+    }
+  }
+  .first a, .last a {
+    width: 50px;
+  }
+  .current {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $main-color;
+    border-radius: 4px;
+    font-size: 20px;
+    color: white;
+    background: $main-color;
+    text-align: center;
+    line-height: 30px;
+  }
 }
