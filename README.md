@@ -50,3 +50,54 @@ http://18.177.63.130/<br><br><br>
 <img width="1440" alt="スクリーンショット 2020-04-22 16 57 57" src="https://user-images.githubusercontent.com/61044016/79957682-e641a000-84bc-11ea-92f4-6d208802cf54.png">
 
 
+# DB設計
+
+## usersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|username|string||
+|password|integer||
+
+### Association
+- has_many :htmls
+- has_many :csses
+- has_many :javascripts
+
+### Validation
+- validates :name, uniqueness: true, presence: true, length: { maximum: 10 }
+- VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
+- validates :password, format: { with: VALID_PASSWORD_REGEX }
+
+## htmlsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|score|integer||
+|game|string||
+|user_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## cssesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|score|integer||
+|game|string||
+|user_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :user
+
+## javascriptsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|score|integer||
+|game|string||
+|user_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :user
