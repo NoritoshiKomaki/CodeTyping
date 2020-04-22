@@ -26,8 +26,8 @@
 .info {
   font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
   display: table;
-  color: #1da1f2;
-  border: 3px solid #1da1f2;
+  color: $main-color;
+  border: 3px solid $main-color;
   margin: 0 auto;
   padding: 10px 20px;
   border-radius: 50px;
@@ -44,8 +44,8 @@
   margin: 0 auto;
   width: 400px;
   padding: 20px;
-  color: #1da1f2;
-  border: 3px solid #1da1f2;
+  color: $main-color;
+  border: 3px solid $main-color;
   border-radius: 10px;
   background: white;
   h1 {
@@ -78,7 +78,7 @@
         border-bottom: 1px solid lightgray;
       }
       .space {
-        color: #1da1f2;
+        color: $main-color;
         font-size: 16px;
         padding-left: 20px;
         font-weight: bold;
