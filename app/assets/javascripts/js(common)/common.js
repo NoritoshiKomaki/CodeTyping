@@ -32,4 +32,10 @@ $(function() {
       $(this).children('.dropdown').removeClass('open');
     }
   );
+  $('#retry').on('click', function() {
+    location.reload();
+  });
+  $('#r-submit').on('click', function() {
+    $('#r-string').text('登録が完了しました');
+  });
 })

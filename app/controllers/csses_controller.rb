@@ -17,7 +17,7 @@ class CssesController < ApplicationController
     @user_id = @ranks_h.keys
     @pages = Kaminari.paginate_array(@ranks).page(params[:page]).per(10)
     if user_signed_in?
-      @id = Css.where(user_id: current_user.id)
+      @id = Css.find_by(user_id: current_user.id)
     end
   end
 

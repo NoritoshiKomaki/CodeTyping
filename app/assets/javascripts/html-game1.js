@@ -1,37 +1,24 @@
 $(function() {
-  $('#length').append('/267');
+  $('#length').append('/242');
   const words = [
-    '<div class="container">',
-      '<h1>hello world</h1>',
-      '<p>my name is tanaka</p>',
-    '</div>',
-    '<style>',
-      '.container {',
-        'width: 300px;',
-        'padding: 30px;',
-        'margin: 300px auto;',
-        'text-align: center;',
-        'background-color: yellow;',
-        'border: 3px solid red;',
-        'border-radius: 10px;',
-      '}',
-      'h1 {',
-        'color: green;',
-      '}',
-      'p {',
-        'color: blue;',
-      '}',
-    '</style> ',
+    '<h1>heading1</h1>',
+    '<h2>heading2</h2>',
+    '<h3>heading3</h3>',
+    '<hr>',
+    '<p>paragraph</p>',
+    '<hr>',
+    '<ul>',
+      '<li>list item1</li>',
+      '<li>list item2</li>',
+      '<li>list item3</li>',
+    '</ul>',
+    '<hr>',
+    '<a href="https://prog-8.com/">anchor</a>',
+    '<hr>',
+    '<img src="https://bit.ly/2yxubtu" alt="html picture"> '
   ];
 
 // ここから固定
-  $('#retry').on('click', function() {
-    location.reload();
-  });
-  $('#r-submit').on('click', function() {
-    $('#r-string').text('登録が完了しました');
-  });
-
   const rank = $('#r-rank')
   const code = $('#code')
   const target = $('#target');
@@ -155,24 +142,25 @@ $(function() {
       code.append(word[loc]);
       loc++;
       if (loc === 15) {
-        target.animate({ scrollLeft: 100})
-      };
+        target.animate({ scrollLeft: 300})
+      }
+      if (loc === 30) {
+        target.animate({ scrollLeft: 600})
+      }
       if (loc === word.length) {
         code.append('<br>');
         word = words[num = num + 1];
         loc = 0;
         $('.editor').animate({ scrollTop: 27 * num});
-        if (num === 6 || num === 7 || num === 8 || num === 9 || num === 10 || num === 11 || num === 12 || num === 15 || num === 18) {
-          code.append(tab4);
-        } else if (num === 1 || num === 2 || num === 5 || num === 13 || num === 14 || num === 16 || num === 17 || num === 19) {
+        if (num === 7 || num === 8 || num === 9) {
           code.append(tab3);
-        } else if (num === 3 || num === 4 || num === 20) {
+        } else {
           code.append(tab2);
         }
       }
       updateTarget();
       score++;
-      if (score === 267) {
+      if (score === 242) {
         showResult();
         $('.result').slideDown(200);
         countStop();

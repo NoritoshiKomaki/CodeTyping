@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.id == @id %>
+<% if user_signed_in? && @id %>
   <h2><%= current_user.username %>さんの順位<br><span class="g-big"><%= @user_id.index(current_user.id) + 1 %></span> / <%= @user_id.length %> 位</h2>
 <% elsif user_signed_in?%>
   <h2><%= current_user.username %>さんの順位<br>- / <%= @user_id.length %> 位</h2>

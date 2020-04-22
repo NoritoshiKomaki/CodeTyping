@@ -20,13 +20,6 @@ $(function() {
   ];
 
 // ここから固定
-  $('#retry').on('click', function() {
-    location.reload();
-  });
-  $('#r-submit').on('click', function() {
-    $('#r-string').text('登録が完了しました');
-  });
-
   const rank = $('#r-rank')
   const code = $('#code')
   const target = $('#target');

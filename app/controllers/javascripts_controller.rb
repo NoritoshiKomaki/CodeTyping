@@ -17,7 +17,7 @@ class JavascriptsController < ApplicationController
     @user_id = @ranks_h.keys
     @pages = Kaminari.paginate_array(@ranks).page(params[:page]).per(10)
     if user_signed_in?
-      @id = Javascript.where(user_id: current_user.id)
+      @id = Javascript.find_by(user_id: current_user.id)
     end
   end
 
