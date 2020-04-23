@@ -58,6 +58,12 @@ $(function() {
     }
     target.text(placeholder + word.substring(loc));
   }
+
+  function colorReset() {
+    $(document).keyup(function () {
+        target.css('color', '#333');
+    });
+  }
   
   function showResult() {
     const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
@@ -173,6 +179,8 @@ $(function() {
     } else {
       miss++;
       missLabel.text(miss);
+      target.css('color', 'crimson');
+      colorReset();
     }
   });
 });

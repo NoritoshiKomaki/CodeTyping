@@ -5,11 +5,11 @@ $(function() {
       'function fizzbuzz() {',
         'for(i = 1; i <= 100; i++) {',
           'if(i % 3 === 0 && i % 5 === 0) {',
-            "console.log('FizzBuzz');",
+            "console.log('fizzbuzz');",
           '} else if(i % 3 === 0) {',
-            "console.log('Fizz');",
+            "console.log('fizz');",
           '} else if(i % 5 === 0) {',
-            "console.log('Buzz');",
+            "console.log('buzz');",
           '} else {',
             'console.log(i);',
           '}',
@@ -58,6 +58,12 @@ $(function() {
       placeholder += '_';
     }
     target.text(placeholder + word.substring(loc));
+  }
+
+  function colorReset() {
+    $(document).keyup(function () {
+        target.css('color', '#333');
+    });
   }
 
   function showResult() {
@@ -179,6 +185,8 @@ $(function() {
     } else {
       miss++;
       missLabel.text(miss);
+      target.css('color', 'crimson');
+      colorReset();
     }
   });
 });
