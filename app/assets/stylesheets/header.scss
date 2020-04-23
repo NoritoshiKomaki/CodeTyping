@@ -39,4 +39,7 @@ header {
   span {
     color: $main-color;
   }
+  &:hover {
+    @include hover;
+  }
 }
