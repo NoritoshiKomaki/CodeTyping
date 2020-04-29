@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :csses, only: [:index, :create] do
     collection do
       get :game1
+      get :game2
     end
   end
   resource :javascript, only: :show

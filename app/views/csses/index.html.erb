@@ -23,8 +23,11 @@
       <p class="u-bar">GAME1<p>
     </div>
     <div class="img">
-      <div class="soon"></div>
-      <p>coming soon..<p>
+      <%= render partial: 'shared/rank', locals: { lang: @css2 } %>
+      <%= link_to game2_csses_path do %>
+        <div class="soon g-title"><h2>Random<br>Words</h2></div>
+      <% end %>
+      <p class="u-bar">GAME2<p>
     </div>
     <div class="img">
       <div class="soon"></div>

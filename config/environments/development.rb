@@ -60,5 +60,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.assets.precompile += ['html-game1.js']
   config.assets.precompile += ['css-game1.js']
+  config.assets.precompile += ['css-game2.js']
   config.assets.precompile += ['js-game1.js']
 end

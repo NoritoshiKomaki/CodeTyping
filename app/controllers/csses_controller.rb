@@ -4,6 +4,7 @@ class CssesController < ApplicationController
     if user_signed_in?
       @css = Css.where(user_id: current_user.id)
       @css1 = @css.where(game: "css1").maximum(:score)
+      @css2 = @css.where(game: "css2").maximum(:score)
     end
   end
 

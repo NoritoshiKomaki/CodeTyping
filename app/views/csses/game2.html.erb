@@ -1,0 +1,37 @@
+<div class="body">
+<%= render 'shared/header' %>
+<%# パンくず %>
+  <div class="pankuzu">
+    <div class="p-container">
+      <%= link_to "トップページ", root_path %>
+      <i class="fas fa-chevron-right"></i>
+      <%= link_to "CSS", csses_path %>
+      <i class="fas fa-chevron-right"></i>
+      <p>GAME1</p>
+    </div>
+  </div>
+<%# ここまで %>
+<%# ここから固定 %>
+  <div class="shadow2"></div>
+  <%= render 'shared/game' %>
+      <% if user_signed_in? %>
+        <%= form_with(url: csses_path, local: true) do |f| %>
+          <%= f.hidden_field :score, id: "myscore" %>
+          <%= f.hidden_field :game, value: "css2" %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "登録する", id: "r-submit" %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="editor">
+    <%= render 'shared/e-number' %>
+    <div class="game-right">
+<%# ここまで %>
+      <p id="code"></p>
+    </div>
+  </div>
+</div>
+<%# jsタグ %>
+<%= javascript_include_tag 'css-game2.js' %>

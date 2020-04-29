@@ -181,8 +181,10 @@ $(function(){
     }
   
     if (e.key === word[loc]) {
+      code.append(word[loc]);
       loc++;
       if (loc === word.length) {
+        code.append('<br>');
         num += 1
         word = words[randoms[num]];
         loc = 0;

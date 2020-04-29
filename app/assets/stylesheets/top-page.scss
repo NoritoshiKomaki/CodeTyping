@@ -131,6 +131,12 @@
     margin: 20px;
     margin-bottom: 5px;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 24px solid white;
+    box-sizing: border-box;
     &:hover {
       transform: scale(1.1,1.1);
       transition: 0.2s;
@@ -143,8 +149,22 @@
     margin: 0 auto;
     margin-bottom: 20px;
   }
+  a {
+    text-decoration: none;
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 2;
+    color: #333;
+  }
+  .g-title {
+    background: $main-color;
+  }
 }
 
 .u-bar {
   border-bottom: 3px solid $main-color;
 }
+
+
