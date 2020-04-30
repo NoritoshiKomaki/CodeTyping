@@ -5,7 +5,7 @@
     <div class="p-container">
       <%= link_to "トップページ", root_path %>
       <i class="fas fa-chevron-right"></i>
-      <%= link_to "CSS", csses_path %>
+      <%= link_to "JavaScript", javascripts_path %>
       <i class="fas fa-chevron-right"></i>
       <p>GAME2</p>
     </div>
@@ -15,9 +15,9 @@
   <div class="shadow2"></div>
   <%= render 'shared/game' %>
       <% if user_signed_in? %>
-        <%= form_with(url: csses_path, local: true) do |f| %>
+        <%= form_with(url: javascripts_path, local: true) do |f| %>
           <%= f.hidden_field :score, id: "myscore" %>
-          <%= f.hidden_field :game, value: "css2" %>
+          <%= f.hidden_field :game, value: "js2" %>
           <%= f.hidden_field :user_id, value: current_user.id %>
           <%= f.submit "登録する", id: "r-submit" %>
         <% end %>
@@ -34,4 +34,4 @@
   </div>
 </div>
 <%# jsタグ %>
-<%= javascript_include_tag 'css-game2.js' %>
+<%= javascript_include_tag 'js-game2.js' %>

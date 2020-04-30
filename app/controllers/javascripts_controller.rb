@@ -4,6 +4,7 @@ class JavascriptsController < ApplicationController
     if user_signed_in?
       @js = Javascript.where(user_id: current_user.id)
       @js1 = @js.where(game: "js1").maximum(:score)
+      @js2 = @js.where(game: "js2").maximum(:score)
     end
   end
 

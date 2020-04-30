@@ -95,4 +95,5 @@ Rails.application.configure do
   config.assets.precompile += ['css-game1.js']
   config.assets.precompile += ['css-game2.js']
   config.assets.precompile += ['js-game1.js']
+  config.assets.precompile += ['js-game2.js']
 end

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :javascripts, only: [:index, :create] do
     collection do
       get :game1
+      get :game2
     end
   end
 end
