@@ -43,7 +43,6 @@ for(i = min; i <= max; i++){
     var tmp = intRandom(min, max);
     if(!randoms.includes(tmp)){
       randoms.push(tmp);
-      console.log(tmp)
       break;
     }
   }
@@ -56,7 +55,6 @@ function intRandom(min, max){
 
 // ここから固定
 const rank = $('#r-rank')
-const code = $('#code')
 const target = $('#target');
 const scoreLabel = $('#score');
 const missLabel = $('#miss');
@@ -181,10 +179,12 @@ $(function(){
     }
   
     if (e.key === word[loc]) {
-      code.append(word[loc]);
+      $('#code').append(word[loc]);
       loc++;
       if (loc === word.length) {
-        code.append('<br>');
+          $('.li' + number).removeAttr('id', 'code').addClass(word);
+          $('.li' + (number + 1)).attr('id', 'code');
+          number++
         num += 1
         word = words[randoms[num]];
         loc = 0;

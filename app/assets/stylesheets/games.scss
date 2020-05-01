@@ -103,7 +103,7 @@
 
 .editor {
   font-family: "RictyDiminished-Regular";
-  font-size: 20px;
+  font-size: 24px;
   width: 800px;
   margin: 40px auto;
   background: #333;
@@ -121,8 +121,18 @@
   p {
     color: green;
   }
-  #code {
-    color: yellow;
+  .game-right {
+    li {
+      color: white;
+      &:hover {
+        color: yellow;
+        text-decoration: underline;
+        @include hover;
+      }
+    }
+    #code {
+      color: yellow;
+    }
   }
 }
 

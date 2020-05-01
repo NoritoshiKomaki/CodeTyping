@@ -29,7 +29,14 @@
     <%= render 'shared/e-number' %>
     <div class="game-right">
 <%# ここまで %>
-      <p id="code"></p>
+      <ul>
+    <% i = 1 %>
+    <li class="li1 code" id="code"></li>
+    <% while 1 <= i && i <= 29 %> 
+      <% i += 1 %>
+      <li class="li<%= i %>"></li>
+    <% end %>
+  </ul>
     </div>
   </div>
 </div>
