@@ -1,0 +1,18 @@
+.words-view {
+  padding: 12px;
+  font-size: 28px;
+  width: 800px;
+  margin: 40px auto;
+  background: white;
+  color: #333;
+  border-radius: 10px;
+  height: 400px;
+  overflow: scroll;
+  border: 5px solid $main-color;
+  line-height: 37px;
+  box-shadow: 3px 3px 3px gray;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    display:none;
+  }
+}

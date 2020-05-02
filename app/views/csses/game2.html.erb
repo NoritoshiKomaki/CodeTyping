@@ -25,18 +25,8 @@
       </div>
     </div>
   </div>
-  <div class="editor">
-    <%= render 'shared/e-number' %>
-    <div class="game-right">
 <%# ここまで %>
-      <ul>
-    <% i = 1 %>
-    <li class="li1 code" id="code"></li>
-    <% while 1 <= i && i <= 29 %> 
-      <% i += 1 %>
-      <li class="li<%= i %>"></li>
-    <% end %>
-  </ul>
+    <%= render 'shared/words' %>
     </div>
   </div>
 </div>
