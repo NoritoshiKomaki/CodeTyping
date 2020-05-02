@@ -1,0 +1,34 @@
+<div class="body">
+<%= render 'shared/header' %>
+<%# パンくず %>
+  <div class="pankuzu">
+    <div class="p-container">
+      <%= link_to "トップページ", root_path %>
+      <i class="fas fa-chevron-right"></i>
+      <%= link_to "vue", vues_path %>
+      <i class="fas fa-chevron-right"></i>
+      <p>GAME1</p>
+    </div>
+  </div>
+<%# ここまで %>
+<%# ここから固定 %>
+  <div class="shadow2"></div>
+  <%= render 'shared/game' %>
+      <% if user_signed_in? %>
+        <%= form_with(url: vues_path, local: true) do |f| %>
+          <%= f.hidden_field :score, id: "myscore" %>
+          <%= f.hidden_field :game, value: "vue1" %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.submit "登録する", id: "r-submit" %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+<%# ここまで %>
+    <%= render 'shared/words' %>
+    </div>
+  </div>
+</div>
+<%# jsタグ %>
+<%= javascript_include_tag 'vue-game1.js' %>

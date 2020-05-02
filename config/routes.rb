@@ -21,5 +21,11 @@ Rails.application.routes.draw do
       get :game2
     end
   end
+  resource :vue, only: :show
+  resources :vues, only: [:index, :create] do
+    collection do
+      get :game1
+    end
+  end
 end
 
