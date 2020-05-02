@@ -48,7 +48,6 @@ for(i = min; i <= max; i++){
     var tmp = intRandom(min, max);
     if(!randoms.includes(tmp)){
       randoms.push(tmp);
-      console.log(tmp)
       break;
     }
   }
@@ -186,13 +185,18 @@ $(function(){
     }
   
     if (e.key === word[loc]) {
-      code.append(word[loc]);
+      $('#code').append(word[loc]);
       loc++;
       if (loc === word.length) {
-        code.append('<br>');
+          $('.li' + number).removeAttr('id', 'code').attr('id', word);
+          $('.li' + (number + 1)).attr('id', 'code');
+          number++
         num += 1
         word = words[randoms[num]];
         loc = 0;
+        if (num > 5) {
+          $('.words-view').animate({ scrollTop: 39 * (num - 5)});
+        }
         if (num === 30) {
           showResult();
           $('.result').slideDown(200);
