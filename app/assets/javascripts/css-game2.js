@@ -35,8 +35,9 @@ $(function() {
     'letter-spacing',
   ];
 
-var randoms = [];
-var min = 0, max = 30;
+  var randoms = [];
+  var min = 0
+  var max = words.length - 1;
 
 for(i = min; i <= max; i++){
   while(true){

@@ -11,16 +11,40 @@ $(function() {
     'el',
     'render',
     'new Vue',
+    'props',
+    'computed',
+    'type',
+    'required',
+    'default',
+    '$emit',
+    'vm',
+    'v-bind',
+    'v-on',
+    'v-if',
+    'v-else-if',
+    'v-else',
+    'v-html',
+    'v-show',
+    'v-model',
+    'v-once',
+    'v-text',
+    'v-pre',
+    'v-cloak',
+    'slot',
+    'v-slot',
+    'template',
   ];
-
+  
 var randoms = [];
-var min = 0, max = 9;
+var min = 0
+var max = words.length - 1;
 
 for(i = min; i <= max; i++){
   while(true){
     var tmp = intRandom(min, max);
     if(!randoms.includes(tmp)){
       randoms.push(tmp);
+      console.log(tmp)
       break;
     }
   }
