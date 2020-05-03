@@ -1,5 +1,22 @@
 $(function() {
   $('#length').append('/242');
+  $('#body').text(
+`    <style>
+      body {
+        margin-top: 100px;
+      }
+      h1, h2, h3, ul, p, a, img {
+        display: table;
+        margin: 0 auto;
+      }
+      img {
+        width: 100px;
+      }
+    </style>
+  </body>
+</html>`
+  )
+
   const words = [
     '<h1>heading1</h1>',
     '<h2>heading2</h2>',

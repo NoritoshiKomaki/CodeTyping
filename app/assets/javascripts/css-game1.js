@@ -1,5 +1,20 @@
 $(function() {
   $('#length').append('/362');
+  $('#body').text(
+`    <div class="container">
+      <div class="left">
+        <div class="red box">
+        <div class="blue box">
+      </div>
+      <div class="right">
+        <div class="yellow box">
+        <div class="green box">
+      </div>
+    </div>
+  </body>
+</html>`
+  )
+  
   const words = [
     '<style>',
       '.container {',

@@ -26,6 +26,16 @@ $(document).keydown(function (e) {
 });
 
 $(function() {
+  $('#head').text(
+`<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>c-typing</title>
+  </head>
+  <body>`
+  )
+  
   $('.ranking').hover(
     function() {
       $(this).children('.dropdown').addClass('open');

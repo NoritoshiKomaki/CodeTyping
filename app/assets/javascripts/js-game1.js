@@ -1,5 +1,9 @@
 $(function() {
   $('#length').append('/246');
+  $('#body').text(
+`  </body>
+</html>`
+  )
   const words = [
     '<script>',
       'function fizzbuzz() {',
