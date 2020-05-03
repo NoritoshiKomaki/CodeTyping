@@ -12,11 +12,11 @@ let cnt = 3;
 let second = 0;
 let number = 1;
 
-const tab2 = '&nbsp;&nbsp;&nbsp;&nbsp;';
-const tab3 = tab2 + '&nbsp&nbsp';
-const tab4 = tab3 + '&nbsp&nbsp';
-const tab5 = tab4 + '&nbsp&nbsp';
-const tab6 = tab5 + '&nbsp&nbsp';
+const tab2 = '    ';
+const tab3 = tab2 + '  ';
+const tab4 = tab3 + '  ';
+const tab5 = tab4 + '  ';
+const tab6 = tab5 + '  ';
 
 $(document).keydown(function (e) {
   if (e.keyCode == 32) {

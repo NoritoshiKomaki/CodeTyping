@@ -39,6 +39,7 @@ $(function() {
     'deactivated',
     'lazy',
     'number',
+    'trim',
   ];
   
 var randoms = [];

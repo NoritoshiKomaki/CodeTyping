@@ -120,8 +120,10 @@
   &::-webkit-scrollbar {
     display:none;
   }
-  p {
+  pre, p {
+    font-family: "RictyDiminished-Regular";
     color: green;
+    line-height: 27px;
   }
   .game-right {
     li {
