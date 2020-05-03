@@ -40,6 +40,12 @@ $(function() {
     'lazy',
     'number',
     'trim',
+    'multiple',
+    '$event',
+    'directive',
+    'inserted',
+    'componentUpdated',
+    'unbind',
   ];
   
 var randoms = [];
