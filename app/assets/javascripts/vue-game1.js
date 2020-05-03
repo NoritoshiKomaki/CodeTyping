@@ -33,6 +33,12 @@ $(function() {
     'slot',
     'v-slot',
     'template',
+    'is',
+    'keep-alive',
+    'activated',
+    'deactivated',
+    'lazy',
+    'number',
   ];
   
 var randoms = [];
