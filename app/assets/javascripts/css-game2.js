@@ -103,35 +103,35 @@ function colorReset() {
 function showResult() {
   const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
   const totalScore =  (score - miss * 3) / (second / 60)
-  if (totalScore >= 300) {
+  if (totalScore >= 200) {
     rank.append('S');
-  } else if (totalScore >= 285) {
+  } else if (totalScore >= 190) {
     rank.append('A+');
-  } else if (totalScore >= 265) {
+  } else if (totalScore >= 180) {
     rank.append('A');
-  } else if (totalScore >= 250) {
+  } else if (totalScore >= 170) {
     rank.append('A-');
-  } else if (totalScore >= 235) {
+  } else if (totalScore >= 160) {
     rank.append('B+');
-  } else if (totalScore >= 215) {
-    rank.append('B');
-  } else if (totalScore >= 200) {
-    rank.append('B-');
-  } else if (totalScore >= 185) {
-    rank.append('C+'); 
-  } else if (totalScore >= 165) {
-    rank.append('C'); 
   } else if (totalScore >= 150) {
+    rank.append('B');
+  } else if (totalScore >= 140) {
+    rank.append('B-');
+  } else if (totalScore >= 130) {
+    rank.append('C+'); 
+  } else if (totalScore >= 120) {
+    rank.append('C'); 
+  } else if (totalScore >= 110) {
     rank.append('C-'); 
-  } else if (totalScore >= 135) {
-    rank.append('D+');
-  } else if (totalScore >= 115) {
-    rank.append('D');
   } else if (totalScore >= 100) {
+    rank.append('D+');
+  } else if (totalScore >= 90) {
+    rank.append('D');
+  } else if (totalScore >= 80) {
     rank.append('D-');
-  } else if (totalScore >= 85) {
+  } else if (totalScore >= 70) {
     rank.append('E+');
-  } else if (totalScore >= 65) {
+  } else if (totalScore >= 60) {
     rank.append('E');
   } else if (totalScore >= 50) {
     rank.append('E-');
