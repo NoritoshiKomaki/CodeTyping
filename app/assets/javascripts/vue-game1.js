@@ -1,13 +1,7 @@
 $(function() {
   $('#length').append('/30');
   const words = [
-    'data','components','methods','watch','scoped','return','$mount','el','render','new Vue','props','computed','required','default','$emit','vm','v-bind','v-on','v-if','v-else-if','v-else','v-html','v-show','v-model','v-once','v-text','v-pre','v-cloak','slot','v-slot','template','keep-alive','activated','deactivated','lazy','trim','multiple','$event','directive','inserted','componentUpdated','unbind','binding','arg','modifiers','filter','export','mixins','transition','transition-group','v-enter','v-leave','appear','mode','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','v-move','router-view','router-link','active-class','exact','query','selector','offset','savedPosition','$root','beforeEach','scrollBehavior','beforeEnter','beforeRouteEnter','beforeRouteUpdate','beforeRouteLeave',
-    'getters',
-    'mapGetters',
-    'mutations',
-    'dispatch',
-    'namespaced',
-    'interceptors',
+    'data','components','methods','watch','scoped','return','$mount','el','render','new Vue','props','computed','required','default','$emit','vm','v-bind','v-on','v-if','v-else-if','v-else','v-html','v-show','v-model','v-once','v-text','v-pre','v-cloak','slot','v-slot','template','keep-alive','activated','deactivated','lazy','trim','multiple','$event','directive','inserted','componentUpdated','unbind','binding','arg','modifiers','filter','export','mixins','transition','transition-group','v-enter','v-leave','appear','mode','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','v-move','router-view','router-link','active-class','exact','query','selector','offset','savedPosition','$root','beforeEach','scrollBehavior','beforeEnter','beforeRouteEnter','beforeRouteUpdate','beforeRouteLeave','getters','mapGetters','mutations','dispatch','namespaced','interceptors',
   ];
   
   var randoms = [];
