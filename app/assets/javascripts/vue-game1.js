@@ -72,7 +72,7 @@ $(function() {
 
   function showResult() {
     const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
-    const totalScore =  (score - miss * 3) / (second / 60)
+    const totalScore =  Math.round((score - miss * 3) / (second / 60));
     if (totalScore >= 200) {
       rank.append('S');
     } else if (totalScore >= 190) {
@@ -108,7 +108,7 @@ $(function() {
     } else {
       rank.append('-');
     }
-    $('#r-totalScore').append(Math.round(totalScore));
+    $('#r-totalScore').append(totalScore);
     $('#r-score').append(score);
     $('#r-miss').append(miss);
     $('#r-accuracy').append(`${accuracy.toFixed(2)}%`);
