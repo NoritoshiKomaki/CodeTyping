@@ -16,7 +16,7 @@ $(function() {
     'border-left',
     'border-right',
     'border-style',
-    'bottom-top',
+    'border-top',
     'bottom',
     'box-shadow',
     'box-sizing',
