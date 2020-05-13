@@ -189,8 +189,8 @@ $(function(){
       $('#code').append(word[loc]);
       loc++;
       if (loc === word.length) {
-        $('.li' + number).removeAttr('id', 'code').attr('href', 'https://developer.mozilla.org/ja/docs/Web/CSS/' + word);
-        $('.li' + (number + 1)).attr('id', 'code');
+          $('.li' + number).removeAttr('id', 'code').attr('id', word);
+          $('.li' + (number + 1)).attr('id', 'code');
           number++
         num += 1
         word = words[randoms[num]];
