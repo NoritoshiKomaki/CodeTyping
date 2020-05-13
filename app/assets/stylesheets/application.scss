@@ -17,6 +17,7 @@ $main-color: #1da1f2;
   &:hover {
     transform: scale(1.1,1.1);
     transition: 0.2s;
+    cursor: pointer;
   }
 }
 
@@ -68,3 +69,4 @@ $main-color: #1da1f2;
 @import "games";
 @import "ranking";
 @import "words";
+@import "modal";
