@@ -1,7 +1,8 @@
 $(function() {
   $('#length').append('/30');
   const words = [
-    'data','components','methods','watch','scoped','return','$mount','el','render','new Vue','props','computed','required','default','$emit','vm','v-bind','v-on','v-if','v-else-if','v-else','v-html','v-show','v-model','v-once','v-text','v-pre','v-cloak','slot','v-slot','template','keep-alive','activated','deactivated','lazy','trim','multiple','$event','directive','inserted','componentUpdated','unbind','binding','arg','modifiers','filter','export','mixins','transition','transition-group','v-enter','v-leave','appear','mode','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','v-move','router-view','router-link','active-class','exact','query','selector','offset','savedPosition','$root','beforeEach','scrollBehavior','beforeEnter','beforeRouteEnter','beforeRouteUpdate','beforeRouteLeave','getters','mapGetters','mutations','dispatch','namespaced','interceptors',
+    'data','components','methods','watch','el','render','props','computed','v-bind','v-on','v-if','v-else-if','v-else','v-html','v-show','v-model','v-once','v-text','v-pre','v-cloak','slot','v-slot','template','keep-alive','activated','deactivated','directive','filter','mixins','transition','transition-group',
+    // 'v-move','scoped','return','$mount','new Vue','required','default','$emit','vm','lazy','trim','multiple','$event','inserted','componentUpdated','unbind','binding','arg','modifiers','export','v-enter','v-leave','appear','mode','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','router-view','router-link','active-class','exact','query','selector','offset','savedPosition','$root','beforeEach','scrollBehavior','beforeEnter','beforeRouteEnter','beforeRouteUpdate','beforeRouteLeave','getters','mapGetters','mutations','dispatch','namespaced','interceptors',
   ];
   
   var randoms = [];
@@ -13,7 +14,6 @@ $(function() {
       var tmp = intRandom(min, max);
       if(!randoms.includes(tmp)){
         randoms.push(tmp);
-        console.log(tmp)
         break;
       }
     }
@@ -153,8 +153,8 @@ $(function() {
       $('#code').append(word[loc]);
       loc++;
       if (loc === word.length) {
-          $('.li' + number).removeAttr('id', 'code').attr('id', word);
-          $('.li' + (number + 1)).attr('id', 'code');
+        $('.li' + number).removeAttr('id', 'code').attr('href', 'https://jp.vuejs.org/v2/api/#' + word);
+        $('.li' + (number + 1)).attr('id', 'code');
           number++
         num += 1
         word = words[randoms[num]];

@@ -57,8 +57,6 @@ $(function() {
     'padding-left',
     'padding-right',
     'padding-top',
-    'rgb',
-    'rgba',
     'right',
     'text-align',
     'text-decoration',
@@ -219,9 +217,9 @@ $(function(){
       $('#code').append(word[loc]);
       loc++;
       if (loc === word.length) {
-          $('#li' + number).removeAttr('class', 'code').attr('href', 'https://developer.mozilla.org/ja/docs/Web/CSS/' + word);
-          $('#li' + (number + 1)).attr('class', 'code');
-          number++
+        $('.li' + number).removeAttr('id', 'code').attr('href', 'https://developer.mozilla.org/ja/docs/Web/CSS/' + word);
+        $('.li' + (number + 1)).attr('id', 'code');
+        number++
         num += 1
         word = words[randoms[num]];
         loc = 0;
@@ -246,13 +244,5 @@ $(function(){
       target.css('color', 'crimson');
       colorReset();
     }
-  });
-  $.each(words,function(a) {
-    $(document).on("click", '#' + words[a], function(){
-      $('.' + words[a]).fadeIn();
-    });
-    $('.close').on('click',function(){
-      $('.' + words[a]).fadeOut();
-    });
   });
 });
