@@ -18,14 +18,14 @@
     <div class="img">
       <%= render partial: 'shared/rank', locals: { lang: @css1 } %>
       <%= link_to game1_csses_path do %>
-        <%= image_tag "css.images/css-game1.gif" %>
+        <div class="soon g-title"><h2>Random<br>Words</h2></div>
       <% end %>
       <p class="u-bar">GAME1<p>
     </div>
     <div class="img">
       <%= render partial: 'shared/rank', locals: { lang: @css2 } %>
       <%= link_to game2_csses_path do %>
-        <div class="soon g-title"><h2>Random<br>Words</h2></div>
+        <%= image_tag "css.images/css-game2.gif" %>
       <% end %>
       <p class="u-bar">GAME2<p>
     </div>

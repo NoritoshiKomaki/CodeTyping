@@ -1,57 +1,30 @@
 $(function() {
-  $('#length').append('/362');
-  $('#body').text(
-`    <div class="container">
-      <div class="left">
-        <div class="red box">
-        <div class="blue box">
-      </div>
-      <div class="right">
-        <div class="yellow box">
-        <div class="green box">
-      </div>
-    </div>
-  </body>
-</html>`
-  )
-  
+  $('#length').append('/30');
   const words = [
-    '<style>',
-      '.container {',
-        'height: 100vh;',
-        'display: flex;',
-        'justify-content: center;',
-        'align-items: center;',
-      '}',
-      '.box {',
-        'width: 200px;',
-        'height: 200px;',
-        'margin: 20px 10px;',
-        'border-radius: 10px;',
-        'box-shadow: 3px 3px 3px gray;',
-      '}',
-      '.box:hover {',
-        'transform: scale(1.5, 1.5);',
-        'transition: 0.2s;',
-      '}',
-      '.red {',
-        'background: red;',
-      '}',
-      '.yellow {',
-        'background: yellow;',
-      '}',
-      '.green {',
-        'background: green;',
-      '}',
-      '.blue {',
-        'background: blue;',
-      '}',
-    '</style> ',
+    ':active','::after','align-content','align-items','align-self','background','background-color','background-image','background-size','::before','border','border-bottom','border-left','border-right','border-style','border-top','bottom','box-shadow','box-sizing','calc','color','cursor','display','flex','flex-basis','flex-direction','flex-grow','flex-shrink','flex-wrap','float','font','font-family','font-size','font-style','font-weight','height',':hover','justify-content','justify-items','justify-self','left','letter-spacing','line-height','list-style','margin','margin-bottom','margin-left','margin-right','margin-top','opacity','overflow','padding','padding-bottom','padding-left','padding-right','padding-top','right','text-align','text-decoration','text-shadow','top','transform','transition','white-space','width','z-index',
   ];
+
+  var randoms = [];
+  var min = 0
+  var max = words.length - 1;
+
+for(i = min; i <= max; i++){
+  while(true){
+    var tmp = intRandom(min, max);
+    if(!randoms.includes(tmp)){
+      randoms.push(tmp);
+      break;
+    }
+  }
+}
+
+function intRandom(min, max){
+  return Math.floor( Math.random() * (max - min + 1)) + min;
+}
+
 
 // ここから固定
 const rank = $('#r-rank')
-const code = $('#code')
 const target = $('#target');
 const scoreLabel = $('#score');
 const missLabel = $('#miss');
@@ -160,7 +133,7 @@ $(function(){
     miss = 0;
     scoreLabel.text(score);
     missLabel.text(miss);
-    word = words[0];
+    word = words[randoms[0]];
   
     target.text(word).css('color', '#2c3e50').css('font-size', '48px')
     startTime = Date.now();
@@ -176,36 +149,28 @@ $(function(){
     }
   
     if (e.key === word[loc]) {
-      code.append(word[loc]);
+      $('#code').append(word[loc]);
       loc++;
-      if (loc === 15) {
-        target.animate({ scrollLeft: 100})
-      };
       if (loc === word.length) {
-        code.append('<br>');
-        word = words[num = num + 1];
+        $('.li' + number).removeAttr('id', 'code').attr('href', 'https://developer.mozilla.org/ja/docs/Web/CSS/' + word);
+        $('.li' + (number + 1)).attr('id', 'code');
+        number++
+        num += 1
+        word = words[randoms[num]];
         loc = 0;
-        $('.editor').animate({ scrollTop: 27 * num});
-        if (num === 0) {
-          return;
-        } else if (num === 30) {
-          code.append(tab2);
-        } else if (num === 1 || num === 6 || num === 7 || num === 13 || num === 14 || num === 17 || num === 18 || num === 20 || num === 21 || num === 23 || num === 24 || num === 26 || num === 27 || num === 29) {
-          code.append(tab3);
-        } else {
-          code.append(tab4);
+        if (num > 5) {
+          $('.words-view').animate({ scrollTop: 39 * (num - 5)});
+        }
+        if (num === 30) {
+          showResult();
+          $('.result').slideDown(200);
+          countStop();
+          stopTimer();
         }
       }
       updateTarget();
       score++;
-      if (score === 362) {
-        showResult();
-        $('.result').slideDown(200);
-        countStop();
-        stopTimer();
-        score++;
-      }
-      scoreLabel.text(score);
+      scoreLabel.text(0 + num);
     } else if(e.keyCode === 16) {
       e.preventDefault();
     } else {
