@@ -1,43 +1,28 @@
 $(function() {
   $('#length').append('/30');
   const words = [
-    'match',
-    'replace',
-    'substring',
-    'sprit',
-    'toUpperCase',
-    'toLowerCase',
-    'length',
-    'push',
-    'pop',
-    'shift',
-    'slice',
-    'blur',
-    'sort',
-    'reverse',
-    'concat',
-    'join',
-    'splice',
-    'random',
-    'floor',
-    'round',
-    'getFullYear',
-    'getMonth',
-    'getDate',
-    'getDay',
-    'getHours',
-    'getMinutes',
-    'getSeconds',
+// string
+    'match','replace','substring','split','toUpperCase','toLowerCase',
+// array
+    'length','push','pop','shift','slice','sort','reverse','concat','join','splice',
+// math
+    'random','floor','round',
+// date
+    'getFullYear','getMonth','getDate','getDay','getHours','getMinutes','getSeconds',
+// apiDocument
+    'getElementById',
+    'getElementsByClassName',
+    'querySelector',
+// htmlElement
     'focus',
-    'alert',
-    'confirm',
-    'setInterval',
-    'setTimeOut',
-    'clearInterval',
-    'clearTimeOut',
-    'clientX',
-    'clientY',
-    'keyCode',
+// apiWindow
+    'alert','confirm','setInterval','clearInterval',
+// windowTimers
+    'setTimeOut','clearTimeOut',
+// mouseEvent
+    'clientX','clientY',
+// element
+    'blur',
   ];
 
   var randoms = [];
@@ -186,12 +171,45 @@ $(function(){
     }
   
     if (e.key === word[loc]) {
-      $('#code').append(word[loc]);
+      const code = $('#code')
+      code.append(word[loc]);
       loc++;
       if (loc === word.length) {
-          $('.li' + number).removeAttr('id', 'code').attr('id', word);
-          $('.li' + (number + 1)).attr('id', 'code');
-          number++
+// string
+        if (word === "match" || word === "replace" || word === "substring" || word === "split" || word === "toUpperCase" || word === "toLowerCase" || word === "match" || word === "match") {
+          code.attr('href', string + word);
+// math
+        } else if (word === "random" || word === "floor" || word === "round") {
+          code.attr('href', math + word);
+// date
+        } else if (word === "getFullYear" || word === "getMonth" || word === "getDate" || word === "getDay" || word === "getHours" || word === "getMinutes" || word === "getSeconds") {
+          code.attr('href', date + word);
+// apiDocument
+        } else if (word === "getElementById" || word === "getElementsByClassName" || word === "querySelector") {
+          code.attr('href', apiDocument + word);
+// htmlElement
+        } else if (word === "focus") {
+          code.attr('href', htmlElement + word);
+// apiWindow
+        } else if (word === "alert" || word === "confirm" || word === "setInterval" || word === "clearInterval") {
+          code.attr('href', apiWindow + word);
+// windowTimers
+        } else if (word === "setTimeOut" || word === "clearTimeOut") {
+          code.attr('href', windowTimers + word);
+// mouseEvent
+        } else if (word === "clientX" || word === "clientY") {
+          code.attr('href', mouseEvent + word);
+// element
+        } else if (word === "blur") {
+          code.attr('href', element + word + event);
+// array
+        } else {
+          code.attr('href', array + word);
+        }
+
+        $('.li' + number).removeAttr('id', 'code').attr('id', word);
+        $('.li' + (number + 1)).attr('id', 'code');
+        number++
         num += 1
         word = words[randoms[num]];
         loc = 0;

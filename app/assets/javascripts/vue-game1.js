@@ -184,11 +184,11 @@ $(function() {
         } else if (word === 'exact') {
           code.attr('href', exact);
         } else {
-          code.attr('href', api + word);
+          code.attr('href', vueApi + word);
         }
         $('.li' + number).removeAttr('id', 'code')
         $('.li' + (number + 1)).attr('id', 'code');
-          number++
+        number++
         num += 1
         word = words[randoms[num]];
         loc = 0;
