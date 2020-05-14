@@ -1,10 +1,12 @@
 $(function() {
   $('#length').append('/30');
   const words = [
+// ここからapi
     'data','components','methods','watch','el','render','props','computed','v-bind','v-on','v-if','v-else-if','v-else','v-html','v-show','v-model','v-once','v-text','v-pre','v-cloak','slot','v-slot','template','keep-alive','activated','deactivated','directive','filter','mixins','transition','transition-group',
-    // 'v-move','scoped','return','$mount','new Vue','required','default','$emit','vm','lazy','trim','multiple','$event','inserted','componentUpdated','unbind','binding','arg','modifiers','export','v-enter','v-leave','appear','mode','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','router-view','router-link','active-class','exact','query','selector','offset','savedPosition','$root','beforeEach','scrollBehavior','beforeEnter','beforeRouteEnter','beforeRouteUpdate','beforeRouteLeave','getters','mapGetters','mutations','dispatch','namespaced','interceptors',
+// ここまで
+    'v-move','scoped','new Vue','$emit','lazy','trim','inserted',,'componentUpdated','unbind','binding','modifiers','v-enter','v-leave','appear','in-out','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','router-link','exact',
   ];
-  
+
   var randoms = [];
   var min = 0
   var max = words.length - 1;
@@ -30,6 +32,7 @@ $(function() {
   const scoreLabel = $('#score');
   const missLabel = $('#miss');
   const timerLabel = $('#timer');
+  const code = $('#code')
 
   function countUp() {
     const d = new Date(Date.now() - startTime + elapsedTime);
@@ -148,12 +151,42 @@ $(function() {
     if (isPlaying !== true) {
       return;
     }
-  
+    
     if (e.key === word[loc]) {
-      $('#code').append(word[loc]);
+      const code = $('#code')
+      code.append(word[loc]);
       loc++;
       if (loc === word.length) {
-        $('.li' + number).removeAttr('id', 'code').attr('href', 'https://jp.vuejs.org/v2/api/#' + word);
+        if (word === "v-move") {
+          code.attr('href', vMove);
+        } else if (word === "scoped") {
+          code.attr('href', scoped);
+        } else if (word === "new Vue") {
+          code.attr('href', newVue);
+        } else if (word === "$emit" || word === '$root') {
+          code.attr('href', vm + word);
+        } else if (word === "lazy" || word === "trim") {
+          code.attr('href', forms + word);
+        } else if (word === "inserted" || word === "componentUpdated" || word === "unbind" || word === 'binding') {
+          code.attr('href', hook);
+        } else if (word === "modifier") {
+          code.attr('href', modifier);
+        } else if (word === 'v-enter' || word === 'v-leave') {
+          code.attr('href', transitionClass);
+        } else if (word === 'appear') {
+          code.attr('href', appear);
+        } else if (word === 'in-out' || word === 'out-in') {
+          code.attr('href', transitionMode);
+        } else if (word === 'before-enter' || word === 'before-leave' || word === 'after-enter' || word === 'after-leave' || word === 'enter-cancelled' || word === 'leave-cancelled') {
+          code.attr('href', jsHook);
+        } else if (word === 'router-link') {
+          code.attr('href', routerLink);
+        } else if (word === 'exact') {
+          code.attr('href', exact);
+        } else {
+          code.attr('href', api + word);
+        }
+        $('.li' + number).removeAttr('id', 'code')
         $('.li' + (number + 1)).attr('id', 'code');
           number++
         num += 1
