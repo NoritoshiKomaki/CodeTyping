@@ -18,13 +18,16 @@
     <div class="img">
       <%= render partial: 'shared/rank', locals: { lang: @html1 } %>
       <%= link_to game1_htmls_path do %>
-        <%= image_tag "html.images/tags.png" %>
+        <div class="soon g-title"><h2>Random<br>Words</h2></div>
       <% end %>
       <p class="u-bar">GAME1<p>
     </div>
     <div class="img">
-      <div class="soon"></div>
-      <p>coming soon..<p>
+      <%= render partial: 'shared/rank', locals: { lang: @html2 } %>
+      <%= link_to game2_htmls_path do %>
+        <%= image_tag "html.images/tags.png" %>
+      <% end %>
+      <p class="u-bar">GAME2<p>
     </div>
     <div class="img">
       <div class="soon"></div>

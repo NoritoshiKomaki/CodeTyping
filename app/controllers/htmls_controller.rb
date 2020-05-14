@@ -4,6 +4,7 @@ def index
     if user_signed_in?
       @html = Html.where(user_id: current_user.id)
       @html1 = @html.where(game: "html1").maximum(:score)
+      @html2 = @html.where(game: "html2").maximum(:score)
     end
   end
 

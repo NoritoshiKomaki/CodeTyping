@@ -92,6 +92,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.assets.precompile += ['html-game1.js']
+  config.assets.precompile += ['html-game2.js']
   config.assets.precompile += ['css-game1.js']
   config.assets.precompile += ['css-game2.js']
   config.assets.precompile += ['js-game1.js']

@@ -1,28 +1,24 @@
 $(function() {
   $('#length').append('/30');
   const words = [
-// string
-    'match','replace','substring','split','toUpperCase','toLowerCase',
-// array
-    'length','push','pop','shift','slice','sort','reverse','concat','join','splice',
-// math
-    'random','floor','round',
-// date
-    'getFullYear','getMonth','getDate','getDay','getHours','getMinutes','getSeconds',
-// apiDocument
-    'getElementById',
-    'getElementsByClassName',
-    'querySelector',
-// htmlElement
-    'focus',
-// apiWindow
-    'alert','confirm','setInterval',
-// windowTimers
-    'clearInterval','setTimeOut','clearTimeOut',
-// mouseEvent
-    'clientX','clientY',
 // element
-    'blur',
+    'html','head','link','meta','style','title','body','footer','header','h1','h2','h3','h4','h5','h6','main','nav','section','div','hr','li','ol','p','pre','ul','a','br','span','strong','img','video','script','table','tbody','td','tfoot','th','thead','tr','button','form','input','label','option','select','textarea','template',
+// global
+    'class','id','lang',
+// form
+    'action',
+// img
+    'alt','src',
+// a
+    'href','target',
+// link
+    'rel',
+// meta
+    'charset',
+// inputA
+    'autocomplete','autofocus','disabled','name','type','value',
+// inputB
+    'checkbox','date','email','radio','submit','text',
   ];
 
   var randoms = [];
@@ -175,36 +171,33 @@ $(function(){
       code.append(word[loc]);
       loc++;
       if (loc === word.length) {
-// string
-        if (word === "match" || word === "replace" || word === "substring" || word === "split" || word === "toUpperCase" || word === "toLowerCase" || word === "match" || word === "match") {
-          code.attr('href', string + word);
-// math
-        } else if (word === "random" || word === "floor" || word === "round") {
-          code.attr('href', math + word);
-// date
-        } else if (word === "getFullYear" || word === "getMonth" || word === "getDate" || word === "getDay" || word === "getHours" || word === "getMinutes" || word === "getSeconds") {
-          code.attr('href', date + word);
-// apiDocument
-        } else if (word === "getElementById" || word === "getElementsByClassName" || word === "querySelector") {
-          code.attr('href', apiDocument + word);
-// htmlElement
-        } else if (word === "focus") {
-          code.attr('href', htmlElement + word);
-// apiWindow
-        } else if (word === "alert" || word === "confirm" || word === "setInterval") {
-          code.attr('href', apiWindow + word);
-// windowTimers
-        } else if (word === 'clearInterval' || word === "setTimeOut" || word === "clearTimeOut") {
-          code.attr('href', windowTimers + word);
-// mouseEvent
-        } else if (word === "clientX" || word === "clientY") {
-          code.attr('href', mouseEvent + word);
+// global
+        if (word === "class" || word === "id" || word === "lang") {
+          code.attr('href', global + word);
+// form
+        } else if (word === "action") {
+          code.attr('href', form + word);
+// img
+        } else if (word === "alt" || word === "src") {
+          code.attr('href', img + word);
+// a
+        } else if (word === "href" || word === "target") {
+          code.attr('href', a + word);
+// link
+        } else if (word === "rel") {
+          code.attr('href', link + word);
+// meta
+        } else if (word === "charset") {
+          code.attr('href', meta + word);
+// inputA
+        } else if (word === "autocomplete" || word === "autofocus" || word ==="disabled"|| word ==="name"|| word ==="type"|| word ==="value") {
+          code.attr('href', inputA + word);
+// inputB
+        } else if (word === "checkbox" || word === "date" || word === "email" || word === "radio" || word === "submit" || word === "text") {
+          code.attr('href', inputB + word);
 // element
-        } else if (word === "blur") {
-          code.attr('href', jsElement + word + event);
-// array
         } else {
-          code.attr('href', array + word);
+          code.attr('href', element + word);
         }
 
         $('.li' + number).removeAttr('id', 'code')

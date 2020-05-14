@@ -29,6 +29,7 @@ const target = $('#target');
 const scoreLabel = $('#score');
 const missLabel = $('#miss');
 const timerLabel = $('#timer');
+const cssUrl = "'https://developer.mozilla.org/ja/docs/Web/CSS/'"
 
 function countUp() {
   const d = new Date(Date.now() - startTime + elapsedTime);
@@ -152,7 +153,7 @@ $(function(){
       $('#code').append(word[loc]);
       loc++;
       if (loc === word.length) {
-        $('.li' + number).removeAttr('id', 'code').attr('href', 'https://developer.mozilla.org/ja/docs/Web/CSS/' + word);
+        $('.li' + number).removeAttr('id', 'code').attr('href', cssUrl + word);
         $('.li' + (number + 1)).attr('id', 'code');
         number++
         num += 1

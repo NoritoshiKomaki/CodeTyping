@@ -10,5 +10,5 @@ const apiWindow = js + "API/Window/"
 const windowTimers = js + "API/WindowTimers/"
 const mouseEvent = js + "API/MouseEvent/"
 
-const element = js + "API/Element/"
+const jsElement = js + "API/Element/"
 const event = "_event"

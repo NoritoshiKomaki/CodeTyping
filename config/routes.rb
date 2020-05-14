@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :htmls, only: [:index, :create] do
     collection do
       get :game1
+      get :game2
     end
   end
   resource :css, only: :show
