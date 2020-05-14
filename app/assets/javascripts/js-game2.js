@@ -16,9 +16,9 @@ $(function() {
 // htmlElement
     'focus',
 // apiWindow
-    'alert','confirm','setInterval','clearInterval',
+    'alert','confirm','setInterval',
 // windowTimers
-    'setTimeOut','clearTimeOut',
+    'clearInterval','setTimeOut','clearTimeOut',
 // mouseEvent
     'clientX','clientY',
 // element
@@ -191,10 +191,10 @@ $(function(){
         } else if (word === "focus") {
           code.attr('href', htmlElement + word);
 // apiWindow
-        } else if (word === "alert" || word === "confirm" || word === "setInterval" || word === "clearInterval") {
+        } else if (word === "alert" || word === "confirm" || word === "setInterval") {
           code.attr('href', apiWindow + word);
 // windowTimers
-        } else if (word === "setTimeOut" || word === "clearTimeOut") {
+        } else if (word === 'clearInterval' || word === "setTimeOut" || word === "clearTimeOut") {
           code.attr('href', windowTimers + word);
 // mouseEvent
         } else if (word === "clientX" || word === "clientY") {
