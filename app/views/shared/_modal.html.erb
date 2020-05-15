@@ -1,0 +1,57 @@
+<div class="modal js-modal">
+  <div class="modal__bg js-modal-close"></div>
+  <div class="modal__content">
+    <p class="back">※黒い背景部分をクリックすると元の画面に戻ります。</p>
+    <h1>Code-Typingとは？</h1>
+    <p>
+      Code-Typingはプログラミング言語に特化したタイピングアプリケーションです。<br>
+      ユーザー登録をしていただくことで以下の機能が追加されます。
+    </p>
+    <div class="m-container">
+      <div class="left">
+        <p>ランキングへの参加</p>
+        <%= image_tag "modal/ranking.png" %>
+      </div>
+      <div class="right">
+        <p>獲得したランクの表示</p>
+        <%= image_tag "modal/rank.png" %>
+      </div>
+    </div>
+    <hr>
+    <h1>ゲーム開始手順</h1>
+    <p class="centering">
+      1.遊びたいプログラミング言語をクリック<br>
+      2.遊びたいゲームをクリック<br>
+      3.カウントダウンの後ゲームスタート
+    </p>
+    <div class="m-container">
+      <%= image_tag "modal/start.gif" %>
+    </div>
+    <hr>
+    <h1>ゲームの種類</h1>
+    <p>
+      Code-Typingでは2種類のゲームを用意しております。<br>
+    </p>
+    <p class="centering">
+      1.使用頻度の高い単語をランダムでタイピングするゲーム<br>
+      2.指示に従ってコードをタイピングするゲーム
+    </p>
+    <div class="m-container">
+      <div class="center">
+        <p>単語ver</p>
+        <%= image_tag "modal/word.gif" %>
+        <p class="word-left">下部に表示された単語をクリックするとリファレンスページに移動します。</p>
+      </div>
+    </div>
+    <div class="m-container">
+      <div class="center">
+        <p>コードver</p>
+        <%= image_tag "modal/code.gif" %>
+        <p class="word-left">
+          タイピング終了後、下部の仮想エディタのコードを使用エディタにコピー＆ペーストするとブラウザやターミナルで挙動を確認できます。<br>
+          <span>※エディタの導入方法や開発環境構築方法の解説は現在作成中です。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
