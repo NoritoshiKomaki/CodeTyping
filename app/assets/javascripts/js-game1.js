@@ -18,7 +18,7 @@ $(function() {
 // apiWindow
     'alert','confirm','setInterval',
 // windowTimers
-    'clearInterval','setTimeOut','clearTimeOut',
+    'clearInterval','setTimeout','clearTimeout',
 // mouseEvent
     'clientX','clientY',
 // element
