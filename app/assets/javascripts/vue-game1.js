@@ -32,7 +32,6 @@ $(function() {
   const scoreLabel = $('#score');
   const missLabel = $('#miss');
   const timerLabel = $('#timer');
-  const code = $('#code')
 
   function countUp() {
     const d = new Date(Date.now() - startTime + elapsedTime);

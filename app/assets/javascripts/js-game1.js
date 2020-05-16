@@ -51,7 +51,6 @@ function intRandom(min, max){
 
 // ここから固定
 const rank = $('#r-rank')
-const code = $('#code')
 const target = $('#target');
 const scoreLabel = $('#score');
 const missLabel = $('#miss');
