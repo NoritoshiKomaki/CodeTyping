@@ -3,13 +3,17 @@
 end
 
 10.times do |n|
-  Html.create!(score: 300 - n * 30 , game: 'html1', user_id: n + 1)
+  Html.create!(score: 200 - n * 10 , game: 'html1', user_id: n + 1)
 end
 
 10.times do |n|
-  Css.create!(score: 300 - n * 30 , game: 'css1', user_id: n + 1)
+  Css.create!(score: 200 - n * 10 , game: 'css1', user_id: n + 1)
 end
 
 10.times do |n|
-  Javascript.create!(score: 300 - n * 30 , game: 'js1', user_id: n + 1)
+  Javascript.create!(score: 200 - n * 10 , game: 'js1', user_id: n + 1)
+end
+
+10.times do |n|
+  Vue.create!(score: 200 - n * 10 , game: 'vue1', user_id: n + 1)
 end

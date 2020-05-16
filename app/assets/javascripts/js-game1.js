@@ -23,6 +23,11 @@ $(function() {
     'clientX','clientY',
 // element
     'blur',
+
+// new word
+    'prototype',
+    'call',
+    'bind',
   ];
 
   var randoms = [];
