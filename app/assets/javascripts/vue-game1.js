@@ -4,7 +4,7 @@ $(function() {
 // ここからapi
     'data','components','methods','watch','el','render','props','computed','v-bind','v-on','v-if','v-else-if','v-else','v-html','v-show','v-model','v-once','v-text','v-pre','v-cloak','slot','v-slot','template','keep-alive','activated','deactivated','directive','filter','mixins','transition','transition-group',
 // ここまで
-    'v-move','scoped','new Vue','$emit','lazy','trim','inserted',,'componentUpdated','unbind','binding','modifiers','v-enter','v-leave','appear','in-out','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','router-link','exact',
+    'v-move','scoped','new Vue','$emit','lazy','trim','inserted','componentUpdated','unbind','binding','modifiers','v-enter','v-leave','appear','in-out','out-in','before-enter','before-leave','after-enter','after-leave','enter-cancelled','leave-cancelled','router-link','exact',
   ];
 
   var randoms = [];
