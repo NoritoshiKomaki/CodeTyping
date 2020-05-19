@@ -1,14 +1,20 @@
 $(function() {
   $('#length').append('/30');
   const words = [
+// referenceClass
+    'static',
 // string
     'match','replace','substring','split','toUpperCase','toLowerCase',
 // array
-    'length','push','pop','shift','slice','sort','reverse','concat','join','splice',
+    'length','push','pop','shift','slice','sort','reverse','concat','join','splice','reduce','join','forEach','map','filter',
 // math
     'random','floor','round',
 // date
     'getFullYear','getMonth','getDate','getDay','getHours','getMinutes','getSeconds',
+// jsFunction
+    'call','bind','apply',
+//object
+    'hasOwnProperty','setPrototypeOf',
 // apiDocument
     'getElementById',
     'getElementsByClassName',
@@ -23,11 +29,10 @@ $(function() {
     'clientX','clientY',
 // element
     'blur',
-
-// new word
+// jsConsole
+    'console.log',
+// prototype
     'prototype',
-    'call',
-    'bind',
   ];
 
   var randoms = [];
@@ -179,8 +184,11 @@ $(function(){
       code.append(word[loc]);
       loc++;
       if (loc === word.length) {
+// referenceClass
+        if (word === "static") {
+          code.attr('href', referenceClass + word)
 // string
-        if (word === "match" || word === "replace" || word === "substring" || word === "split" || word === "toUpperCase" || word === "toLowerCase" || word === "match" || word === "match") {
+        } else if (word === "match" || word === "replace" || word === "substring" || word === "split" || word === "toUpperCase" || word === "toLowerCase" || word === "match" || word === "match") {
           code.attr('href', string + word);
 // math
         } else if (word === "random" || word === "floor" || word === "round") {
@@ -188,6 +196,12 @@ $(function(){
 // date
         } else if (word === "getFullYear" || word === "getMonth" || word === "getDate" || word === "getDay" || word === "getHours" || word === "getMinutes" || word === "getSeconds") {
           code.attr('href', date + word);
+// jsFunction
+        } else if (word === "call" || word === "bind" || word === "apply") {
+          code.attr('href', jsFunction + word)
+// object
+        } else if (word === "hasOwnProperty" || word === "setPrototypeOf") {
+          code.attr('href', object + word)
 // apiDocument
         } else if (word === "getElementById" || word === "getElementsByClassName" || word === "querySelector") {
           code.attr('href', apiDocument + word);
@@ -206,6 +220,12 @@ $(function(){
 // element
         } else if (word === "blur") {
           code.attr('href', jsElement + word + event);
+// jsConsole
+        } else if (word === "console.log") {
+          code.attr('href', jsConsole)
+// prototype
+        } else if (word === "prototype") {
+          code.attr('href', prototype)
 // array
         } else {
           code.attr('href', array + word);

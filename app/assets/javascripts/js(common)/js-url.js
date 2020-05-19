@@ -1,14 +1,23 @@
-const js = "https://developer.mozilla.org/ja/docs/Web/";
-const reference = js + "JavaScript/Reference/Global_Objects/"
-const string = reference + "String/";
-const array = reference + "Array/";
-const math = reference + "Math/";
-const date = reference + "Date/";
-const apiDocument = js + "API/Document/"
-const htmlElement =  js + "API/HTMLOrForeignElement/"
-const apiWindow = js + "API/Window/"
-const windowTimers = js + "API/WindowTimers/"
-const mouseEvent = js + "API/MouseEvent/"
+const js = "https://developer.mozilla.org/ja/docs/";
+const jsWeb = js + "Web/"
+const jsLearn = js + "Learn/"
+const reference = jsWeb + "JavaScript/Reference/"
+const referenceGlobal = reference + "Global_Objects/"
+const referenceClass = reference + "Classes/";
+const string = referenceGlobal + "String/";
+const array = referenceGlobal + "Array/";
+const math = referenceGlobal + "Math/";
+const date = referenceGlobal + "Date/";
+const jsFunction = referenceGlobal + "Function/"
+const object = reference + "Object/"
+const apiDocument = jsWeb + "API/Document/"
+const htmlElement =  jsWeb + "API/HTMLOrForeignElement/"
+const apiWindow = jsWeb + "API/Window/"
+const windowTimers = jsWeb + "API/WindowTimers/"
+const mouseEvent = jsWeb + "API/MouseEvent/"
+const jsConsole = jsWeb + "API/Console/log"
+const prototype = jsLearn + "JavaScript/Objects/Object_prototypes"
 
-const jsElement = js + "API/Element/"
+
+const jsElement = jsWeb + "API/Element/"
 const event = "_event"

@@ -50,14 +50,12 @@ $(function() {
     $('#r-string').text('登録が完了しました');
   });
 
-  $(function(){
-    $('#play').on('click',function(){
-        $('.js-modal').fadeIn();
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
-    });
+  $('#play').on('click',function(){
+      $('.js-modal').fadeIn();
+      return false;
+  });
+  $('.js-modal-close').on('click',function(){
+      $('.js-modal').fadeOut();
+      return false;
+  });
 });
-})
