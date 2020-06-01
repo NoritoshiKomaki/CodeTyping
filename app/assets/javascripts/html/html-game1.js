@@ -2,7 +2,22 @@ $('#length').append('/30');
 const words = [
 // element
   'html','head','link','meta','style','title','body','footer','header','h1','h2','h3','h4','h5','h6','main','nav','section','div','hr','li','ol','p','pre','ul','a','br','span','strong','img','video','script','table','tbody','td','tfoot','th','thead','tr','button','form','input','label','option','select','textarea','template',
-
+// global
+  'class','id','lang',
+// form
+  'action',
+// img
+  'alt','src',
+// a
+  'href','target',
+// link
+  'rel',
+// meta
+  'charset',
+// inputA
+  'autocomplete','autofocus','disabled','name','type','value',
+// inputB
+  'checkbox','date','email','radio','submit','text',
 ];
 
 var randoms = [];
