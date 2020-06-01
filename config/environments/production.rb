@@ -91,11 +91,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.assets.precompile += ['html-game1.js']
-  config.assets.precompile += ['html-game2.js']
-  config.assets.precompile += ['css-game1.js']
-  config.assets.precompile += ['css-game2.js']
-  config.assets.precompile += ['js-game1.js']
-  config.assets.precompile += ['js-game2.js']
-  config.assets.precompile += ['vue-game1.js']
+  config.assets.precompile += ['common.js']
+  config.assets.precompile += ['random.js']
+  config.assets.precompile += ['editor.js']
+  config.assets.precompile += ['html/html-game1.js']
+  config.assets.precompile += ['html/html-game2.js']
+  config.assets.precompile += ['css/css-game1.js']
+  config.assets.precompile += ['css/css-game2.js']
+  config.assets.precompile += ['js/js-game1.js']
+  config.assets.precompile += ['js/js-game2.js']
+  config.assets.precompile += ['vue/vue-game1.js']
 end

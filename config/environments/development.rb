@@ -58,11 +58,14 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.assets.precompile += ['html-game1.js']
-  config.assets.precompile += ['html-game2.js']
-  config.assets.precompile += ['css-game1.js']
-  config.assets.precompile += ['css-game2.js']
-  config.assets.precompile += ['js-game1.js']
-  config.assets.precompile += ['js-game2.js']
-  config.assets.precompile += ['vue-game1.js']
+  config.assets.precompile += ['common.js']
+  config.assets.precompile += ['random.js']
+  config.assets.precompile += ['editor.js']
+  config.assets.precompile += ['html/html-game1.js']
+  config.assets.precompile += ['html/html-game2.js']
+  config.assets.precompile += ['css/css-game1.js']
+  config.assets.precompile += ['css/css-game2.js']
+  config.assets.precompile += ['js/js-game1.js']
+  config.assets.precompile += ['js/js-game2.js']
+  config.assets.precompile += ['vue/vue-game1.js']
 end
